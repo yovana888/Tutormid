@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function PanelT() {
+export default function Chat() {
   return (
     <div>
-      Panel Teacher
+      Chat
     </div>
   )
 }

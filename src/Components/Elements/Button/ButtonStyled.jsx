@@ -1,8 +1,7 @@
 import React from 'react'
-import Button from 'react-bootstrap/Button';
-
+import { StyledButton } from './Style'
 export default function ButtonStyled() {
   return (
-    <Button variant="primary">Primary</Button>
+    <StyledButton variant="primary">Primary</StyledButton>
   )
 }

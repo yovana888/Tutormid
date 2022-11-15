@@ -1,7 +1,19 @@
 import React from 'react'
 import { StyledButton } from './Style'
-export default function ButtonStyled() {
+
+
+export default function NewButton({text, color='primary', type='button', onClick }) {
+ 
   return (
-    <StyledButton variant="primary">Primary</StyledButton>
+    <>
+        <StyledButton variant="light" 
+        className={color} 
+        type={type} 
+        onClick={onClick} >
+           {text} 
+           </StyledButton>
+        
+    </>
+    
   )
 }

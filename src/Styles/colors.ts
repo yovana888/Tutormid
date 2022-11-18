@@ -13,5 +13,7 @@ export const colors = {
     bgLight:"#F9F1FE",
     darkColor:"#403C5D",
     bgLight2:"#F5F5F5",
+    bgWhite:"#fff",
+
 }
 

@@ -65,7 +65,6 @@ export const MenuItem = styled.li`
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
-  font-family: "Oswald";
   font-weight: 400;
   
 

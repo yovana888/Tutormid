@@ -1,15 +1,13 @@
 import React from 'react'
 import TeacherCard from '../../Components/Cards/teacherCards/TeacherCard'
 import { TeacherSection } from './Styles'
-import Navbar from '../../Components/Groups/Navbar/Navbar'
-
+import Banner from './Sections/Banner/Banner'
 
 
 export default function Home() {
   return (
-    <div>
-        
-        
+    <>
+        <Banner/>
         <section className='container'>
         {/* Home page */}
 
@@ -20,6 +18,6 @@ export default function Home() {
             <TeacherCard/>
          </TeacherSection>
         </section>
-    </div>
+    </>
   )
 }

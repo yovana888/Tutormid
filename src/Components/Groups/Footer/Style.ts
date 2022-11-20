@@ -6,7 +6,6 @@ export const Footercontainer = styled.footer`
 .footer-middle{
     background-color: ${colors.secondaryColor};
     padding-top: 0.3rem;
-    font-family: 'Inter';
     color: #FFF;
 }
 

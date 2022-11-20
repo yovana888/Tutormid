@@ -15,7 +15,9 @@ export const NavbarContainer = styled.div`
   position: sticky;
   top: 0;
   z-index: 99;
-  background-color: ${colors.bgLight};
+  border-bottom: 1px solid ${colors.lineColor};
+  background:white;
+  padding:20px 30px;
 `
 
 export const NavbarWrapper = styled.div`
@@ -34,6 +36,9 @@ export const IconLogo = styled(Link)`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  img{
+    margin-top:-25px;
+  }
   `
 
 
@@ -62,10 +67,9 @@ export const MenuItem = styled.li`
   height: 100%;
   padding: 0.5rem 1.5rem;
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
   font-size: 1.2rem;
-  font-family: "Oswald";
   font-weight: 400;
   
 

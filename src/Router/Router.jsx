@@ -10,18 +10,13 @@ import AdsT from '../Pages/Teacher/Ads/AdsT';
 import PanelS from '../Pages/Student/Panel/PanelS';
 import Chat from '../Pages/Student/Chat/Chat';
 import PanelT from '../Pages/Teacher/Panel/PanelT';
-import Navbar from '../Components/Groups/Navbar/Navbar';
-import { colors } from '../Styles/colors';
 
 export default function Router() {
   return (
-
+  
       <BrowserRouter>
       <Routes>
-
-      
-
-      
+   
       
       <Route element={<Main/>} path="/">
         <Route element={<Home/>} path=""/>

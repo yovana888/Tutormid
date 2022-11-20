@@ -20,7 +20,7 @@ export default function Router() {
       <Routes>
 
       
-      <Route element={<Navbar/>} path="/"  color={colors.darkColor}/> 
+
       
       
       <Route element={<Main/>} path="/">

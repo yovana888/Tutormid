@@ -14,6 +14,7 @@ export const colors = {
     darkColor:"#403C5D",
     bgLight2:"#F5F5F5",
     bgWhite:"#fff",
-
+    darkPurpleColor: "#35314C",
+    tittlePurpleColor: "#403B5C",
 }
 

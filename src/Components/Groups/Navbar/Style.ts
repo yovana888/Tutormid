@@ -112,6 +112,7 @@ export const IconLogoMobile = styled.div`
     display: flex;
     color: ${colors.darkColor};
     font-size: 2rem;
+    padding-right: 1.5rem;
   }
 `
 

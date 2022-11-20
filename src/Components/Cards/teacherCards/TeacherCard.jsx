@@ -1,149 +1,112 @@
 import React from 'react'
-import {StyledCard} from './Style'
-import Badge from 'react-bootstrap/Badge';
-import { CardImg } from 'react-bootstrap';
-import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import { CardStyle,CardImage, CardName,CardMateria,CardBody, CardDescription, Price, Calification } from './Style'
+import { BsClockFill } from 'react-icons/bs';
+import { AiFillStar } from 'react-icons/ai';
+import { colors }  from '../../../Styles/colors';
+
+
+
 
 
 export default function TeacherCard() {
   return (
-    <div className='wrapper'>
-      <CardContent 
-      img='./Rectangle 974.png'
-      name='Lisa Sotelo Flores'
-      materia='Matemáticas'
-      description='Tutora de matemáticas para niños y adolescentes'
-      price='$15.00 / 1 hora'
-      calification='5.0'
-       />
+    <Container>
+      <Row>
+        <Col lg={4} md={6}>
+          <CardContent 
+          img='./Rectangle 974.png'
+          name='Lisa Sotelo Flores'
+          materia='Matemáticas'
+          description='Tutora de matemáticas para niños y adolescentes'
+          price='$15.00 / 1 hora'
+          calification='5.0'
+          />
+        </Col>
 
-      <CardContent 
-      img='./Rectangle 974.png'
-      name='Lisa Sotelo Flores'
-      materia='Matemáticas'
-      description='Tutora de matemáticas para niños y adolescentes'
-      price='$15.00 / 1 hora'
-      calification='5.0'
-      />
+        <Col lg={4} md={6}>
+          <CardContent 
+          img='./Rectangle 974.png'
+          name='Lisa Sotelo Flores'
+          materia='Matemáticas'
+          description='Tutora de matemáticas para niños y adolescentes'
+          price='$15.00 / 1 hora'
+          calification='5.0'
+          />
+        </Col>
 
-      <CardContent 
-      img='./Rectangle 974.png'
-      name='Lisa Sotelo Flores'
-      materia='Matemáticas'
-      description='Tutora de matemáticas para niños y adolescentes'
-      price='$15.00 / 1 hora'
-      calification='5.0'
-      />
+        <Col lg={4} md={6}>
+          <CardContent 
+          img='./Rectangle 974.png'
+          name='Lisa Sotelo Flores'
+          materia='Matemáticas'
+          description='Tutora de matemáticas para niños y adolescentes'
+          price='$15.00 / 1 hora'
+          calification='5.0'
+          />
+        </Col>
 
-      <CardContent 
-      img='./Rectangle 974.png'
-      name='Lisa Sotelo Flores'
-      materia='Matemáticas'
-      description='Tutora de matemáticas para niños y adolescentes'
-      price='$15.00 / 1 hora'
-      calification='5.0'
-      />
+        <Col lg={4} md={6}>
+          <CardContent 
+          img='./Rectangle 974.png'
+          name='Lisa Sotelo Flores'
+          materia='Matemáticas'
+          description='Tutora de matemáticas para niños y adolescentes'
+          price='$15.00 / 1 hora'
+          calification='5.0'
+          />
+        </Col>
 
-      <CardContent 
-      img='./Rectangle 974.png'
-      name='Lisa Sotelo Flores'
-      materia='Matemáticas'
-      description='Tutora de matemáticas para niños y adolescentes'
-      price='$15.00 / 1 hora'
-      calification='5.0'
-      />
-       
-      <CardContent 
-      img='./Rectangle 974.png'
-      name='Lisa Sotelo Flores'
-      materia='Matemáticas'
-      description='Tutora de matemáticas para niños y adolescentes'
-      price='$15.00 / 1 hora'
-      calification='5.0'
-       />        
-    </div>
+        <Col lg={4} md={6}>
+          <CardContent 
+          img='./Rectangle 974.png'
+          name='Lisa Sotelo Flores'
+          materia='Matemáticas'
+          description='Tutora de matemáticas para niños y adolescentes'
+          price='$15.00 / 1 hora'
+          calification='5.0'
+          />
+        </Col>
+        
+        <Col lg={4} md={6}>
+          <CardContent 
+          img='./Rectangle 974.png'
+          name='Lisa Sotelo Flores'
+          materia='Matemáticas'
+          description='Tutora de matemáticas para niños y adolescentes'
+          price='$15.00 / 1 hora'
+          calification='5.0'
+          />
+        </Col>
+      </Row>
+      </Container>
   )
 }
 
 
  function CardContent(props) {
   return (
-    <div className="card">
-      <div className="card__body">
-        <img src={props.img} alt="" />
-        <h2 className='card__name'>{props.name}</h2>
-        <h5 className='card__materia'>{props.materia}</h5>
-        <p className="description">{props.description}</p>
-      </div>
-      <div>
-      <span className='price'>{props.price}</span>
-      <span className='calification'>{props.calification}</span>
-      </div>
-    
+    <CardStyle className="card">
+      <CardBody className="card__body">
+
+
+      <CardImage className='card__image' src={props.img} alt="" />
+
+        <CardName className='card__name'>{props.name}</CardName>       
+        <CardMateria className='card__materia'>{props.materia}</CardMateria>
+        <CardDescription className="description">{props.description}</CardDescription>
+
+        <div className='d-flex justify-content-between card__footerr' >
+
+          <Price className='price'><BsClockFill style={{paddingBottom: "4px" }} size='1.4rem'/>  {props.price}</Price>         
+          <Calification className='calification'><AiFillStar color= "#FFC538" style={{paddingBottom: "4px" }} size='1.4rem'/>  {props.calification}</Calification>
+
+        </div>
+
+      </CardBody>
       
-      
-    </div>
+    </CardStyle>
   )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function TeacherCard() {
-//   return (
-//     <div>
-//       <div className='row'>
-//       <StyledCard className='col-4'>
-//         <Card.Img variant="top" src="/Rectangle 974.png" />        
-//         <h5>Lisa Sotelo Flores</h5>
-//         <p>Matemáticas</p>
-//         <p>Tutora de matemáticas para niños y adolescentes</p>
-//         <div className="d-flex">
-//         <Badge bg="info" pill width="3rem">$15.00 / h</Badge>
-//         <p>5.0</p>
-//         </div>
-//     </StyledCard>
-//               {/* CARD 2 */}
-//     <StyledCard className='col-4'>
-//       <Card.Img variant="top" src="/Rectangle 976.png" /> 
-//         <h5>Lisa Sotelo Flores</h5>
-//         <p>Musica-Piano</p>
-//         <p>Instructora de piano con más de 5 años de experien...</p>
-//         <div className="d-flex space-between">
-//         <Badge bg="info" pill width="3rem">$15.00 / h</Badge>
-//         <p>5.0</p>
-//         </div>
-//     </StyledCard>
-//             {/* CARD 3 */}
-//     <StyledCard className='col-4'>
-//         <Card.Img variant="top" src="/Rectangle 978.png" /> 
-//         <h5>Lisa Sotelo Flores</h5>
-//         <p>Fisica - Química</p>
-//         <p>Magister en ciencias aplicadas y Titulada en Fisi...</p>
-//         <div className="d-flex">
-//         <Badge bg="info" pill width="3rem">$15.00 / h</Badge>
-//         <p>5.0</p>
-//         </div>
-//     </StyledCard>
-
-
-//       </div>
-//     </div>
-    
-
-//   );
-// }
-
-// export default TeacherCard;

@@ -13,6 +13,8 @@ export const colors = {
     bgLight:"#F9F1FE",
     darkColor:"#403C5D",
     bgLight2:"#F5F5F5",
+    bgWhite:"#fff",
+
     darkPurpleColor: "#35314C",
     tittlePurpleColor: "#403B5C",
     nameTeacherColor: "#0B1530",
@@ -20,5 +22,6 @@ export const colors = {
     cardDescriptionColor: "#7C8C9D",
     priceCardColor: "#5F2ECC",
 
+    lineColor:'#D4D6DB'
 }
 

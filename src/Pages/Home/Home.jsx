@@ -1,14 +1,13 @@
 import React from 'react'
 import TeacherCard from '../../Components/Cards/teacherCards/TeacherCard'
 import { TeacherSection } from './Styles'
-import Button from 'react-bootstrap/Button';
-
+import Banner from './Sections/Banner/Banner'
 
 
 export default function Home() {
   return (
-    <div>
-        Home page
+    <>
+        <Banner/>
         <section className='container'>
          <TeacherSection>
             <h3 className='text-center title-prof'>Profesores profesionales y calificados</h3>
@@ -17,6 +16,6 @@ export default function Home() {
             <Button variant="outline-info">Info</Button>
          </TeacherSection>
         </section>
-    </div>
+    </>
   )
 }

@@ -26,11 +26,13 @@ export default function Navbar() {
   
   }
 
+  const [isLogin, setIsLogin] = useState(false);
+
   return (
     <>
     <NavbarContainer> 
       <NavbarWrapper>
-          <IconLogo> <img src='./src/assets/logo2.png' width={140} height={60} alt="" /></IconLogo>
+          <IconLogo> <img src='./src/assets/logo.svg' width={140} alt="logo" /></IconLogo>
 
           <IconLogoMobile onClick={() => ChangeClick() }> 
           {
@@ -39,7 +41,10 @@ export default function Navbar() {
           }
         
           </IconLogoMobile>
-
+          {isLogin && 
+                /** AQUI IRA EL COMPONENTE DEL IMG PERFIL + MENU SALIR Y MI PERFIL */
+                <img src='./src/assets/logo.svg' width={140} alt="logo" />
+          }
           <Menu click={click} > 
 
             <MenuItem onClick={() => ChangeClick() }>
@@ -54,9 +59,7 @@ export default function Navbar() {
             <MenuItem onClick={() => ChangeClick() }>
               <MenuItemLink> Ingresar </MenuItemLink>
             </MenuItem>
-       
-            <StyledButton> Registrarse </StyledButton> 
-         
+            <StyledButton> Registrarse </StyledButton>  
           </Menu>
       </NavbarWrapper>
     </NavbarContainer>

@@ -10,8 +10,8 @@ export default function NewButton({text, color='primary', type='button', onClick
         className={color} 
         type={type} 
         onClick={onClick} >
-           {text} 
-           </StyledButton>
+        {text} 
+        </StyledButton>
         
     </>
     

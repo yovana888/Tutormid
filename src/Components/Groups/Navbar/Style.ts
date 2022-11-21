@@ -9,7 +9,6 @@ import {Link} from 'react-router-dom';
  // para luego usarla en la otra web. 
 
 export const NavbarContainer = styled.div`
-  
   width: 100%;
   height: 80%;
   position: sticky;
@@ -51,16 +50,16 @@ export const Menu = styled.ul`
 
   @media screen and (max-width: 960px){ 
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     position: absolute;
-    top: 60px; 
-    left: ${( { click } ) => (click ? 0 : '-100%') }; // operador ternario
+    top: 60px;
+    left: ${({ click }) => (click ? 0 : "-100%")};
     flex-direction: column;
     transition: 0.5s all ease-in;
     background: ${colors.bgLight};
-
+    padding: 0 1rem;
+    justify-content: flex-start;
   }
-
 `
 
 export const MenuItem = styled.li`
@@ -71,7 +70,6 @@ export const MenuItem = styled.li`
   align-items: center;
   font-size: 1.2rem;
   font-weight: 400;
-  
 
   &:hover{ 
     background-color: ${colors.bgWhite} ;
@@ -81,7 +79,9 @@ export const MenuItem = styled.li`
 
   @media screen and (max-width: 960px) { 
     width: 100%;
-    height: 90px;
+    height: 48px;
+    padding: .5rem 0;
+    justify-content: flex-start;
   }
 `
 
@@ -108,6 +108,10 @@ export const StyledButton = styled.button`
   color: #010606 ;
  }
 
+ @media screen and (max-width: 960px) {
+  margin-right: auto;
+ }
+
 `
 
 export const IconLogoMobile = styled.div`
@@ -116,10 +120,11 @@ export const IconLogoMobile = styled.div`
     display: flex;
     color: ${colors.darkColor};
     font-size: 2rem;
-    padding-right: 1.5rem;
   }
 `
 
+
+ 
 
 
 

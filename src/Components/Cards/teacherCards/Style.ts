@@ -1,42 +1,49 @@
+import  Card  from 'react-bootstrap/Card';
 import styled from 'styled-components';
 import { colors }  from '../../../Styles/colors';
 
 
-export const CardStyle = styled.div`
-    overflow: hidden;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+export const ContainerCard = styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 19rem));
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 6rem;
+`;
+
+
+export const CardStyle = styled(Card)`
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
-    display: flex;
-    justify-content: space-between;
     cursor: pointer;
     transition: transform 200ms ease-in;
-    width: 20rem;
-    height: 26.3rem;
     font-family: 'Inter';
+    border: none;
+    width: 20rem;   
 `;
 
 export const CardBody = styled.div `
-    padding: 0 1.5rem;
+    padding: 1rem;
 `;
 
 export const CardImage = styled.img `
     height: 12rem;
     width: 20rem;
+    object-fit: none;
     
 `;
 
 export const CardName = styled.h2 `
     font-weight: 500;
     font-size: 22px;
-    line-height: 27px;
     color: ${colors.nameTeacherColor};
 `;
 
 export const CardMateria = styled.h5 `
     font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 18px;
     color: ${colors.materiaColor};
+    padding-bottom: 0.5rem;
 `;
 
 export const CardDescription = styled.p `
@@ -44,6 +51,7 @@ export const CardDescription = styled.p `
     font-size: 20px;
     line-height: 24px;
     color: ${colors.cardDescriptionColor};
+    padding-bottom: 0.7rem;
 `;
 
 export const Price = styled.span `
@@ -51,11 +59,13 @@ export const Price = styled.span `
     font-size: 18px;
     line-height: 22px;
     color: ${colors.priceCardColor};
+    padding-bottom: 0.7rem;
 `;
 
 export const Calification = styled.span `
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 24px;
     color: ${colors.nameTeacherColor};
+    padding-bottom: 0.7rem;
 `;

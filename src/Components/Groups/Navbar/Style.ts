@@ -53,7 +53,7 @@ export const Menu = styled.ul`
     height: 100vh;
     position: absolute;
     top: 60px;
-    left: ${({ click }) => (click ? 0 : "-100%")};
+    left: ${({click}) => click ? "0" : "-100%"};
     flex-direction: column;
     transition: 0.5s all ease-in;
     background: ${colors.bgLight};

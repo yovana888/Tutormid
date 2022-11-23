@@ -2,6 +2,7 @@ import React from 'react'
 import TeacherCard from '../../Components/Cards/teacherCards/TeacherCard'
 import { TeacherSection } from './Styles'
 import Banner from './Sections/Banner/Banner'
+import SliderCards from "../Home/Slider-Card/SliderCards"
 
 
 export default function Home() {
@@ -17,6 +18,9 @@ export default function Home() {
 
             <TeacherCard/>
          </TeacherSection>
+        </section>
+        <section>
+          <SliderCards/> 
         </section>
     </>
   )

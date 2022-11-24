@@ -1,5 +1,6 @@
 import React, { ChangeEvent, useState } from 'react';
-import { ContainerTextField, Input, ContainerInput } from './Style';
+import { ContainerTextField, Input, ContainerInput,Label } from './Style';
+
 
 /*
     ===================COMO USAR ICONOS===================
@@ -23,9 +24,10 @@ interface IProps {
     handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
     defaultValue?: string;
     isReadOnly?: boolean;
+    width100?:boolean;
 }
 
-const TextField = ({ classes="", icon=null, edge=null, placeholder="", label, type="text", name, handleChange, defaultValue="", isReadOnly=false }: IProps): JSX.Element => {
+const TextField = ({ classes="", icon=null, edge=null, placeholder="", label, type="text", name, handleChange, defaultValue="", isReadOnly=false, width100=false }: IProps): JSX.Element => {
 
     const [isFocus, setIsFocus] = useState<boolean>(false);
 
@@ -35,11 +37,12 @@ const TextField = ({ classes="", icon=null, edge=null, placeholder="", label, ty
         onBlur={() => setIsFocus(false)}
     >
 
-        { label ? <span>{label}</span> : null }
+        { label ? <Label>{label}</Label> : null }
 
         <ContainerInput
             isFocus={isFocus}
             edge={edge}
+            style={{width:width100?'100%':'30ch'}}
         >
             { edge === 'start' ? icon : null }
 

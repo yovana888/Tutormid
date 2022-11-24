@@ -5,14 +5,14 @@ import styled from "styled-components";
 export const ButtonElement = styled.button`
     border: none;
     box-sizing: border-box;
-    border-radius: 8px;
+    border-radius: 5px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 16px;
     line-height: 40px;
 
@@ -24,8 +24,9 @@ export const ButtonElement = styled.button`
     /* si hay icono, lo separo un poco del texto */
     > svg {
         margin-left: 10px;
-        height: 20px;
-        width: 20px;
+        height: 18px;
+        width: 18px;
+        font-weight: 400;
     }
 
     /* tamaños */

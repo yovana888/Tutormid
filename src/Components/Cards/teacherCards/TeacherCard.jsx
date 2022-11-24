@@ -18,7 +18,7 @@ export default function TeacherCard() {
 {/* CARD 1 */}        
         <div>
           <CardContent 
-          img='./Rectangle 974.png'
+          img='./Rectangle 974.svg'
           name='Lisa Sotelo Flores'
           materia='Matemáticas'
           description='Tutora de matemáticas para niños y adolescentes'
@@ -30,7 +30,7 @@ export default function TeacherCard() {
 {/* CARD 2 */}
         <div>
           <CardContent 
-          img='./Rectangle 976.png'
+          img='./Rectangle 976.svg'
           name='Meri Rosas Laura'
           materia='Musica-Piano'
           description='Instructora de piano con más de 5 años de experien...'
@@ -43,7 +43,7 @@ export default function TeacherCard() {
 
         <div>
           <CardContent 
-          img='./Rectangle 978.png'
+          img='./Rectangle 978.svg'
           name='Meri Rosas Laura'
           materia='Fisica - Química'
           description='Magister en ciencias aplicadas y Titulada en Fisi...'
@@ -56,7 +56,7 @@ export default function TeacherCard() {
 
         <div>
           <CardContent 
-          img='./Rectangle 986.png'
+          img='./Rectangle 986.svg'
           name='Gerardo Perez'
           materia='Matematica Universitaria'
           description='Docente de la Academia XYZ, e Ingeniero Civil de ...'
@@ -69,7 +69,7 @@ export default function TeacherCard() {
 
         <div>
           <CardContent 
-          img='./Rectangle 988.png'
+          img='./Rectangle 988.svg'
           name='Ramon Alave'
           materia='Musica - Guitarra'
           description='Instructor de musica y canto, egresado de la escu..'
@@ -82,7 +82,7 @@ export default function TeacherCard() {
 
         <div>
           <CardContent 
-          img='./Rectangle 990.png'
+          img='./Rectangle 990.svg'
           name='Evelin Cutipa'
           materia='Entrenadora de Gym'
           description='Entrenadora personal online y presencial de habla ingle...'

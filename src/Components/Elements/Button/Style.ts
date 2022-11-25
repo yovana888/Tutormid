@@ -65,6 +65,12 @@ export const ButtonElement = styled.button`
         color: ${colors.primaryColor};
     }
 
+    &.outline-blue {
+        border: 1px solid ${colors.blueColor};
+        background: white;
+        color: ${colors.blueColor};
+    }
+
 
     /* fin colores */
 

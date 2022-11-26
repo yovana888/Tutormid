@@ -5,14 +5,14 @@ import styled from "styled-components";
 export const ButtonElement = styled.button`
     border: none;
     box-sizing: border-box;
-    border-radius: 8px;
+    border-radius: 5px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 16px;
     line-height: 40px;
 
@@ -24,8 +24,14 @@ export const ButtonElement = styled.button`
     /* si hay icono, lo separo un poco del texto */
     > svg {
         margin-left: 10px;
-        height: 20px;
-        width: 20px;
+        height: 15px;
+        width: 15px;
+    }
+
+    >img {
+        margin-right:10px;
+        height: 15px;
+        width: 15px;
     }
 
     /* tamaños */
@@ -33,8 +39,20 @@ export const ButtonElement = styled.button`
         padding: 10px 50px;
     }
 
+    &.md-size {
+        padding: 10px 35px;
+        @media screen and (max-width: 750px) {
+            width:100%;
+        }
+    }
+
     &.small-size {
         padding: 10px 20px;
+    }
+
+    &.lg-size {
+        padding: 10px 20px;
+        width:100%;
     }
     /* fin tamaños */
 
@@ -62,6 +80,19 @@ export const ButtonElement = styled.button`
         border: 1px solid ${colors.primaryColor};
         background: white;
         color: ${colors.primaryColor};
+    }
+
+    &.outline-blue {
+        border: 1px solid ${colors.blueColor};
+        background: white;
+        color: ${colors.blueColor};
+    }
+
+    &.responsive-right{
+        @media screen and (max-width: 960px) {
+            margin-top:17px;
+            margin-right: auto;
+        }
     }
 
 

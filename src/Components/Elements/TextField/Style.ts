@@ -1,21 +1,26 @@
 import styled from "styled-components";
+import { colors } from "../../../Styles/colors";
 
 interface IContainerInput {
     isFocus: boolean;
     edge: string | null;
 }
 
+
 const styles = (): string => (`
-    padding: 12px;
+    padding: 8px 14px;
     display: inline-block;
-    border: 2px solid #ccc;
-    border-radius: 3px;
+    border-radius: 5px;
     box-sizing: border-box;
+    color:${colors.textColor};
     outline: none;
     transition: border .1s ease-in-out;
-
     &:focus {
-        border: 2px solid #5C4D9C;
+        border: 1px solid #5C4D9C;
+    }
+    ::placeholder,
+    ::-webkit-input-placeholder {
+        color:${colors.placeholderColor}
     }
 `);
 
@@ -23,13 +28,18 @@ export const TextField = styled.input`
     ${styles()}
 `;
 
+export const Label = styled.span`
+    color:${colors.secondaryColor};
+   
+`
+
 export const TextTareaField = styled.textarea`
     ${styles()}
 `;
 
 export const ContainerTextField = styled.div`
     span {
-        margin-bottom: 10px;
+        margin-bottom: 8px;
         display: block;
     }
 `;
@@ -37,7 +47,6 @@ export const ContainerTextField = styled.div`
 export const Input = styled.input`
     ${styles()}
     border: none;
-
     &:focus {
         border: none;
     }
@@ -49,15 +58,13 @@ export const ContainerInput = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 25ch;
-    border: 2px solid ${({ isFocus }: IContainerInput) => isFocus ? '#572F90' : '#ccc'};
-    ${({ edge }: IContainerInput) => edge && (edge === 'start' ? 'padding-left: 12px' : 'padding-right: 12px')};
-
+    
+    border: 1px solid ${({ isFocus }: IContainerInput) => isFocus ? colors.primaryColor : colors.borderInput};
+    ${({ edge }: IContainerInput) => edge && (edge === 'start' ? 'padding-left: 12px; color:#B2BBCB' : 'padding-right: 12px; color:#B2BBCB')};
     svg {
         cursor: pointer;
     }
-
-    input {
+    input{
         width: 100%;
     }
 `;

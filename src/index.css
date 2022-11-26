@@ -9,3 +9,22 @@ body {
   box-sizing: border-box;
 }
 
+
+::-webkit-scrollbar-thumb
+{
+    background: #8f8c97 !important;
+    opacity: 0.3;
+    border-radius: 4px;
+}
+::-webkit-scrollbar {
+    height: 4px;
+    width: 5px;
+  }
+
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.26) !important;
+  }
+
+  .css-b62m3t-container{
+    width: 100% !important;
+  }

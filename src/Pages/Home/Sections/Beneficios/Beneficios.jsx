@@ -8,7 +8,7 @@ import { CiDollar } from 'react-icons/ci';
 export default function Beneficios() {
   return (
     <BenefitStyled>
-        <div className='container-fluid'>
+        <div className='container'>
                 <div className='row'>
                         <div className='col-12 col-sm-12 col-md-8 '>
                                 <h1>Descubre qué ofrece Tutormid

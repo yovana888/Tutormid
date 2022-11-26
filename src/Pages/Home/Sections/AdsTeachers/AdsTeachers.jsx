@@ -1,7 +1,9 @@
 import React from 'react'
 import  {TeacherSection}  from './Style'
 import TeacherCard from '../../../../Components/Cards/teacherCards/TeacherCard'
-import  Button  from 'react-bootstrap/Button'
+import Button from '../../../../Components/Elements/Button/Button'
+import { IoIosArrowDropright } from 'react-icons/io';
+
 
 export default function AdsTeachers() {
   return (
@@ -10,8 +12,9 @@ export default function AdsTeachers() {
             <p className='text-center text-prof'>Más del 85% de los alumnos han dado una <br/> calificación de 5 estrellas</p>
             <TeacherCard/>
             <div className='d-flex justify-content-center pb-5'>
-            <Button variant="outline-info px-5">Ver más profesores</Button>
+            <Button text='Ver más profesores    ' type='button' color='outline'  icon={<IoIosArrowDropright/>} />
             </div>
          </TeacherSection>
+         
   )
 }

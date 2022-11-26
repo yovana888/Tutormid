@@ -5,7 +5,7 @@ export const Footercontainer = styled.footer`
 
 .footer-middle{
     background-color: ${colors.secondaryColor};
-    padding-top: 0.3rem;
+    padding-top: 1rem;
     color: #FFF;
 }
 

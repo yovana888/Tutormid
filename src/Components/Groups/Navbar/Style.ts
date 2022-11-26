@@ -16,7 +16,7 @@ export const NavbarContainer = styled.div`
   z-index: 99;
   border-bottom: 1px solid ${colors.lineColor};
   background:white;
-  padding:20px 30px;
+  padding:20px 3.3rem;
 `
 
 export const NavbarWrapper = styled.div`

@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 
 export const Container = styled.div`
   background: ${colors.bgLight};
-  padding: 30px 40px;
+  padding: 30px 3.3rem;
 `;
 
 export const ContainerImage = styled(Col)`
@@ -40,4 +40,5 @@ export const Title = styled.h1`
 export const SubTitle = styled.span`
   color: ${colors.darkColor};
   margin-bottom: 18px;
+  font-size:17px;
 `;

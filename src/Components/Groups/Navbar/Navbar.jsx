@@ -11,8 +11,9 @@ import {FaBars} from 'react-icons/fa';
 import {useState} from 'react'
 import {FaTimes} from 'react-icons/fa';
 import { NavDropdown } from 'react-bootstrap';
-import { Fragment } from 'react-is/cjs/react-is.development'
 
+import ModalLogin from './Modals/ModalLogin'
+import ModalRegister from './Modals/ModalRegister'
 
 export default function Navbar() {
 
@@ -24,6 +25,21 @@ export default function Navbar() {
   }
   const handleLogin = () => setIsLogin(!isLogin);
   const handleLogout = () => setIsLogin(false);
+
+   // ------------------------------Acciones para Abrir Modal Login------------------------------
+
+   const [showModalLogin, setshowModalLogin] = useState(false);
+   const toggleModalLogin = () => {
+     setshowModalLogin(!showModalLogin)
+   }
+
+    // ------------------------------Acciones para Abrir Modal Register------------------------------
+
+    const [showModalRegister, setshowModalRegister] = useState(false);
+    const toggleModalRegister = () => {
+      setshowModalRegister(!showModalRegister)
+    }
+ 
 
   return (
     <>
@@ -59,15 +75,28 @@ export default function Navbar() {
               </>
               :
               <>
-                <MenuItem onClick={() => handleLogin() }>
+                <MenuItem  onClick={() => { toggleModalLogin() }} >
                   <MenuItemLink>Ingresar</MenuItemLink>
                 </MenuItem>
-                <StyledButton>Registrarse</StyledButton>
+                <StyledButton  onClick={() => { toggleModalRegister() }} >Registrarse</StyledButton>
               </>
             }
           </Menu>
       </NavbarWrapper>
     </NavbarContainer>
+
+      {  /* ------------------------------ Modal Login  ------------------------------*/}
+      <ModalLogin
+        isOpen={showModalLogin}
+        toggle={toggleModalLogin}
+      />
+
+      {  /* ------------------------------ Modal Register  ------------------------------*/}
+      <ModalRegister
+        isOpen={showModalRegister}
+        toggle={toggleModalRegister}
+      />
+
     </>
   )
 }

@@ -24,3 +24,7 @@ body {
 ::-webkit-scrollbar-track {
     background-color: rgba(0, 0, 0, 0.26) !important;
   }
+
+  .css-b62m3t-container{
+    width: 100% !important;
+  }

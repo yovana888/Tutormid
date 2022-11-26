@@ -39,6 +39,10 @@ export const ButtonElement = styled.button`
         padding: 10px 50px;
     }
 
+    &.md-size {
+        padding: 10px 35px;
+    }
+
     &.small-size {
         padding: 10px 20px;
     }

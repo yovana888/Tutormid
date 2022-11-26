@@ -25,9 +25,10 @@ interface IProps {
     defaultValue?: string;
     isReadOnly?: boolean;
     width100?:boolean;
+    isGroup?:boolean;
 }
 
-const TextField = ({ classes="", icon=null, edge=null, placeholder="", label, type="text", name, handleChange, defaultValue="", isReadOnly=false, width100=false }: IProps): JSX.Element => {
+const TextField = ({ classes="", icon=null, edge=null, placeholder="", label, type="text", name, handleChange, defaultValue="", isReadOnly=false, width100=false,isGroup }: IProps): JSX.Element => {
 
     const [isFocus, setIsFocus] = useState<boolean>(false);
 

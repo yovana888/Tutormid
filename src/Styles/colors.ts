@@ -16,6 +16,7 @@ export const colors = {
     bgWhite:"#fff",
     darkPurpleColor: "#35314C",
     tittlePurpleColor: "#403B5C",
-    lineColor:'#D4D6DB'
+    lineColor:'#D4D6DB',
+    botonColor: '6B42DE',
 }
 

@@ -24,9 +24,14 @@ export const ButtonElement = styled.button`
     /* si hay icono, lo separo un poco del texto */
     > svg {
         margin-left: 10px;
-        height: 18px;
-        width: 18px;
-        font-weight: 400;
+        height: 15px;
+        width: 15px;
+    }
+
+    >img {
+        margin-right:10px;
+        height: 15px;
+        width: 15px;
     }
 
     /* tamaños */

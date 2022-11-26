@@ -54,8 +54,10 @@ export default function NotFounf() {
       NotFound
       <Button text="Prueba" icon={<TiPlus />} /> <br />
       <Button text="Prueba" icon={<TiPlus />} color="outline" /> <br />
-      <Button text="Prueba" icon={<TiPlus />} color="outline-blue" />
-      <br />
+      <Button text="Prueba" icon={<TiPlus />} color="outline-blue" /><br />
+      <Button text="Prueba" color="outline" isGoogle /><br />
+      <Button text="Btn sm" icon={<TiPlus />} color="outline-blue" size="small-size"/><br />
+    
       <ContainerInline>
         <Button text="Prueba" color="info" icon={<TiPlus />} />
         <TextField name="prueba" placeholder="prueba" />

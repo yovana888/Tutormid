@@ -32,6 +32,7 @@ const colourStyles = {
     return {
       ...styles,
       backgroundColor: isFocused ? colors.bgLightPurple : "white",
+      fontWeight: isSelected?500:400,
       color: isSelected
         ? colors.primaryColor
         : isDisabled

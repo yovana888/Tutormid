@@ -10,26 +10,24 @@ interface Props {
     icon?: JSX.Element | null;
     type?: "button" | "submit" | "reset" | undefined;
     className?: string;
-    style?: React.CSSProperties | undefined
+    style?: React.CSSProperties | undefined,
+    isGoogle?:boolean
 }
 
 //* por defecto: default-size y es primary(({prop1, prop2....}))
 
-function Button({ text, size = "default-size", color = "primary", type, disabled, onClick, icon, className, style }: Props) {
-   
-
-//style={{marginLeft: ".6rem"}}
-    // caso de un size específico se lo paso por classname, completar estilado en ./styles.ts
+function Button({ text, size = "default-size", color = "primary", type, disabled, onClick, icon, className, style, isGoogle=false }: Props) {
+    //la otra opcion es small-size
     if (size !== "default-size")
         return (
             <ButtonElement onClick={onClick} type={type} className={`${className} ${size} ${color}`} style={style} disabled={disabled}>
-                 {text} {icon}
+              {isGoogle && (<img src="/google.png" className="google"/>)} {text} {icon}
             </ButtonElement>
         );
     else
         return (
             <ButtonElement onClick={onClick} type={type} className={`default-size ${className} ${color}`} style={style} disabled={disabled}>
-                {text}  {icon}
+                {isGoogle && (<img src="/google.png"  className="google"/>)} {text}  {icon}
             </ButtonElement>
         );
 }

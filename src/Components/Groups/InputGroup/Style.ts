@@ -22,6 +22,10 @@ export const ContainerInline = styled.div`
     display:flex;
     flex-direction:row;
     gap:15px;
-    justify-content: stretch;   
+    justify-content: stretch;
     align-items:center;
+    @media screen and (max-width: 750px) {
+        flex-direction:column;
+        width:100%;
+    }
 `

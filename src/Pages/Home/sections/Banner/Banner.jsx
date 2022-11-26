@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, ColumnText, Title, SubTitle } from './Styles'
+import { Container, ColumnText, Title, SubTitle, ContainerImage } from './Styles'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import NewInputGroup from '../../../../Components/Groups/InputGroup/InputGroup';
@@ -18,7 +18,7 @@ export default function Banner() {
                         <NewInputGroup/>
                     </ColumnText>
                 </Col>
-                <Col><img src="src/assets/img-banner.svg" alt="img-banner" /></Col>
+                <ContainerImage><img src="src/assets/img-banner.svg" alt="img-banner" /></ContainerImage>
            </Row>
         </Container>
     </>

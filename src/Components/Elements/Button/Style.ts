@@ -41,6 +41,9 @@ export const ButtonElement = styled.button`
 
     &.md-size {
         padding: 10px 35px;
+        @media screen and (max-width: 750px) {
+            width:100%;
+        }
     }
 
     &.small-size {

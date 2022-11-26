@@ -42,6 +42,11 @@ export const ButtonElement = styled.button`
     &.small-size {
         padding: 10px 20px;
     }
+
+    &.lg-size {
+        padding: 10px 20px;
+        width:100%;
+    }
     /* fin tamaños */
 
     /* colores */

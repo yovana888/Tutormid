@@ -21,7 +21,7 @@ interface IProps {
     label?: string;
     type?: 'text' | 'number' | 'email' | 'password' | 'date';
     name: string;
-    handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
+    handleChange?: (e: ChangeEvent<HTMLInputElement>) => void;
     defaultValue?: string;
     isReadOnly?: boolean;
     width100?:boolean;

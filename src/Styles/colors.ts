@@ -16,7 +16,7 @@ export const colors = {
     bgWhite:"#fff",
     darkPurpleColor: "#35314C",
     tittlePurpleColor: "#403B5C",
-    lineColor:'#D4D6DB',
+    lineColor:'#f1f1f1',
     borderInput:"#BCBABA",
     placeholderColor:"#B2BBCB",
     textMutedColor:"#CCCCCC",

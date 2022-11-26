@@ -36,10 +36,13 @@ export const IconLogo = styled(Link)`
   flex-wrap: wrap;
   justify-content: flex-start;
   img{
-    margin-top:-25px;
+    margin-top: -22px;
+    @media screen and (max-width: 960px){
+      margin-top: -15px;
+      width: 100px;
+    }
   }
   `
-
 
 export const Menu = styled.ul`
   height: 100%;
@@ -53,11 +56,12 @@ export const Menu = styled.ul`
     height: 100vh;
     position: absolute;
     top: 60px;
-    left: ${({ click }) => (click ? 0 : "-100%")};
+    left: ${({ click } : any) => (click ? 0 : "-100%")};
     flex-direction: column;
     transition: 0.5s all ease-in;
-    background: ${colors.bgLight};
-    padding: 0 1rem;
+    border-top: 1px solid ${colors.lineColor};
+    padding-top:15px;
+    background:white;
     justify-content: flex-start;
   }
 `
@@ -119,7 +123,7 @@ export const IconLogoMobile = styled.div`
   @media screen and (max-width: 960px) { 
     display: flex;
     color: ${colors.darkColor};
-    font-size: 2rem;
+    font-size: 1rem;
   }
 `
 

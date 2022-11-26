@@ -81,6 +81,13 @@ export const ButtonElement = styled.button`
         color: ${colors.blueColor};
     }
 
+    &.responsive-right{
+        @media screen and (max-width: 960px) {
+            margin-top:17px;
+            margin-right: auto;
+        }
+    }
+
 
     /* fin colores */
 

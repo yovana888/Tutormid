@@ -24,7 +24,7 @@ export default function ModalLogin({ isOpen, toggle }: Props) {
             placeholder="Your Email"
             width100={true}
           /><br />
-          <NewLink name="Link prueba" onClick={()=>{console.log('hice click')}} type='link'/><br /><br />
+          <NewLink name="Link prueba" onClick={()=>{console.log('hice click')}}/><br /><br />
           <Button text="Btn Large 100%" size="lg-size" />
         </>
     </NewModal>

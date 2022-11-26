@@ -13,7 +13,7 @@ interface Props {
   export default function NewModal({ isOpen,toggle,children,title }: Props) {
 
     return (
-        <Modal show={isOpen} onHide={toggle}  scrollable={true}>
+        <Modal show={isOpen} onHide={toggle}  scrollable={true} centered>
             <NewHeaderModal>
                 <ModalTitle> <IoIosArrowBack cursor={'pointer'} size={23} onClick={() => toggle()}/> {'   '} {title}</ModalTitle>
             </NewHeaderModal>

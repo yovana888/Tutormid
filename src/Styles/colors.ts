@@ -24,6 +24,7 @@ export const colors = {
     borderInput:"#BCBABA",
     placeholderColor:"#B2BBCB",
     textMutedColor:"#CCCCCC",
-    bgLightPurple:"#EEE5FF"
+    bgLightPurple:"#EEE5FF",
+    bgPurple2:"#A387EF"
 }
 

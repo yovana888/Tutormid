@@ -1,5 +1,5 @@
 import React from "react";
-import { BenefitStyled, TextStyled, ContainerText  } from "./Styles";
+import { BenefitStyled, TextStyled, ContainerText,Image  } from "./Styles";
 import Text from "../../../../Components/Elements/Text/Text";
 import { dataBeneficios } from "./data";
 export default function Beneficios() {
@@ -21,7 +21,7 @@ export default function Beneficios() {
           </ContainerText>
           <div className="col-12 col-sm-12 col-md-4 align-self-end">
             <div className="imagen ">
-              <img className="img-fluid" src="/foto_beneficios.svg" alt="" />
+              <Image className="img-fluid" src="/foto_beneficios.svg" alt="" />
             </div>
           </div>
         </div>

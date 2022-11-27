@@ -38,6 +38,10 @@ export const ContainerText = styled.div`
     padding-top:70px;
 `
 
+export const Image = styled.img`
+
+`
+
 
 
 

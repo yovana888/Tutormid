@@ -12,7 +12,7 @@ interface Props {
     className?: string;
     style?: React.CSSProperties | undefined,
     isGoogle?:boolean;
-    responsiveRight?:boolean
+    responsiveRight?:boolean //es para que cuando este en 970 el button se ubica en la derecha y ya no en el centro
 }
 
 //* por defecto: default-size y es primary(({prop1, prop2....}))

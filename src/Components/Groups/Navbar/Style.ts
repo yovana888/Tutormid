@@ -63,6 +63,7 @@ export const Menu = styled.ul`
     padding-top:15px;
     background:white;
     justify-content: flex-start;
+    padding-left:3.3rem;
   }
 `
 

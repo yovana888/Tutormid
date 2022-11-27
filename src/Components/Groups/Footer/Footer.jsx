@@ -18,7 +18,7 @@ export default function Footer() {
   return (
     <Footercontainer className="main-footer ">
         <div className='footer-middle '>
-            <div className="container">
+            <div className="container footer-container">
                 <div className="row ">
                     {/* Column 1 */}
                     <div className=" col-md-3 col-sm-6">

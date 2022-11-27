@@ -42,6 +42,10 @@ export const ButtonElement = styled.button`
     &.small-size {
         padding: 10px 20px;
     }
+
+    &.ads-size {
+        padding: 10px 90px;
+    }
     /* fin tamaños */
 
     /* colores */

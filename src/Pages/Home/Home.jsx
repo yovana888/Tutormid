@@ -1,21 +1,18 @@
 import React from 'react'
-import TeacherCard from '../../Components/Cards/teacherCards/TeacherCard'
-import { TeacherSection } from './Styles'
+import AdsTeachers from '../Home/Sections/AdsTeachers/AdsTeachers'
 import Banner from './Sections/Banner/Banner'
-
+import Beneficios from './Sections/Beneficios/Beneficios'
+import Steps from './Sections/Steps/Steps'
+import Reviews from './Sections/Reviews/Reviews'
 
 export default function Home() {
   return (
     <>
         <Banner/>
-        <section className='container'>
-         <TeacherSection>
-            <h3 className='text-center title-prof'>Profesores profesionales y calificados</h3>
-            <p className='text-center text-prof'>Más del 85% de los alumnos han dado una <br/> calificación de 5 estrellas</p>
-
-            <TeacherCard/>
-         </TeacherSection>
-        </section>
+        <Steps/>
+        <AdsTeachers/>
+        <Beneficios/>
+        <Reviews/>
     </>
   )
 }

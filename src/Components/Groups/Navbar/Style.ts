@@ -9,7 +9,6 @@ import {Link} from 'react-router-dom';
  // para luego usarla en la otra web. 
 
 export const NavbarContainer = styled.div`
-  
   width: 100%;
   height: 80%;
   position: sticky;
@@ -17,7 +16,7 @@ export const NavbarContainer = styled.div`
   z-index: 99;
   border-bottom: 1px solid ${colors.lineColor};
   background:white;
-  padding:20px 30px;
+  padding:20px 3.3rem;
 `
 
 export const NavbarWrapper = styled.div`
@@ -37,10 +36,13 @@ export const IconLogo = styled(Link)`
   flex-wrap: wrap;
   justify-content: flex-start;
   img{
-    margin-top:-25px;
+    margin-top: -22px;
+    @media screen and (max-width: 960px){
+      margin-top: -15px;
+      width: 100px;
+    }
   }
   `
-
 
 export const Menu = styled.ul`
   height: 100%;
@@ -51,16 +53,18 @@ export const Menu = styled.ul`
 
   @media screen and (max-width: 960px){ 
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     position: absolute;
-    top: 60px; 
-    left: ${( { click } ) => (click ? 0 : '-100%') }; // operador ternario
+    top: 60px;
+    left: ${({ click } : any) => (click ? 0 : "-100%")};
     flex-direction: column;
     transition: 0.5s all ease-in;
-    background: ${colors.bgLight};
-
+    border-top: 1px solid ${colors.lineColor};
+    padding-top:15px;
+    background:white;
+    justify-content: flex-start;
+    padding-left:3.3rem;
   }
-
 `
 
 export const MenuItem = styled.li`
@@ -71,7 +75,6 @@ export const MenuItem = styled.li`
   align-items: center;
   font-size: 1.2rem;
   font-weight: 400;
-  
 
   &:hover{ 
     background-color: ${colors.bgWhite} ;
@@ -81,7 +84,9 @@ export const MenuItem = styled.li`
 
   @media screen and (max-width: 960px) { 
     width: 100%;
-    height: 90px;
+    height: 48px;
+    padding: .5rem 0;
+    justify-content: flex-start;
   }
 `
 
@@ -108,6 +113,10 @@ export const StyledButton = styled.button`
   color: #010606 ;
  }
 
+ @media screen and (max-width: 960px) {
+  margin-right: auto;
+ }
+
 `
 
 export const IconLogoMobile = styled.div`
@@ -115,10 +124,31 @@ export const IconLogoMobile = styled.div`
   @media screen and (max-width: 960px) { 
     display: flex;
     color: ${colors.darkColor};
-    font-size: 2rem;
+    font-size: 1rem;
   }
 `
 
+export const Buttons = styled.button`
+    width: 100%;
+    border: 2px solid #6B42DE ;
+    border-radius: 5px;
+    color: #6B42DE ;
+    background-color: ${colors.bgWhite};
+   
+`
+
+export const StyledIcons = styled.div`
+   margin-top: 16px;
+   display: flex;
+`
+export const ContainerModal = styled.div`
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+`
+
+ 
 
 
 

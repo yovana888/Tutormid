@@ -18,12 +18,12 @@ export default function Footer() {
   return (
     <Footercontainer className="main-footer ">
         <div className='footer-middle '>
-            <div className="container">
+            <div className="container footer-container">
                 <div className="row ">
                     {/* Column 1 */}
                     <div className=" col-md-3 col-sm-6">
                         <Link to='/'  >
-                            <img className='mb-4 pt-2' src='./LogoTutormid.png' />
+                            <img className='mb-4 pt-2' src='./LogoTutormid.svg' />
                         </Link>
                         <ul className='list-unstyled'>
                             <li className='mb-2'><Link to='/'> Sobre Nosotros</Link></li>

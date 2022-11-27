@@ -14,9 +14,17 @@ export const colors = {
     darkColor:"#403C5D",
     bgLight2:"#F5F5F5",
     bgWhite:"#fff",
-
     darkPurpleColor: "#35314C",
     tittlePurpleColor: "#403B5C",
-    lineColor:'#D4D6DB'
+    nameTeacherColor: "#0B1530",
+    materiaColor: "#0B6AFF",
+    cardDescriptionColor: "#7C8C9D",
+    priceCardColor: "#5F2ECC",
+    lineColor:'#D4D6DB',
+    borderInput:"#BCBABA",
+    placeholderColor:"#B2BBCB",
+    textMutedColor:"#CCCCCC",
+    bgLightPurple:"#EEE5FF",
+    bgPurple2:"#A387EF"
 }
 

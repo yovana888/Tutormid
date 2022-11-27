@@ -29,8 +29,8 @@ function AdsCardContent(props) {
         </section>
 
         <section className='col-md-7 col-sm-12 text-area'>
-            <h2 className='name'>Lisa Sotelo Flores</h2>
-            <h4  className='materia' >Matemáticas</h4>
+            <h4 className='name'>Lisa Sotelo Flores</h4>
+            <h5  className='materia' >Matemáticas</h5>
             <p className='description'>Estudiante de ingeniería :) Con experiencia enseñando a estudiantes de colegio y/o preuniversitarios Clases virtuales de matemática (aritmética, álgebra, geometría, trigonometría)...
             </p>
         </section>
@@ -47,7 +47,7 @@ function AdsCardContent(props) {
           </div>
 
           <div>
-            <Button text='Reservar'/>
+            <Button text='Reservar' className='container-fluid'/>
           </div>
         </section>
     </BodyCard>

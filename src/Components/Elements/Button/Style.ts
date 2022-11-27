@@ -39,12 +39,24 @@ export const ButtonElement = styled.button`
         padding: 10px 50px;
     }
 
+    &.md-size {
+        padding: 10px 35px;
+        @media screen and (max-width: 750px) {
+            width:100%;
+        }
+    }
+
     &.small-size {
         padding: 10px 20px;
     }
 
     &.ads-size {
         padding: 10px 90px;
+    }
+
+    &.lg-size {
+        padding: 10px 20px;
+        width:100%;
     }
     /* fin tamaños */
 
@@ -78,6 +90,13 @@ export const ButtonElement = styled.button`
         border: 1px solid ${colors.blueColor};
         background: white;
         color: ${colors.blueColor};
+    }
+
+    &.responsive-right{
+        @media screen and (max-width: 960px) {
+            margin-top:17px;
+            margin-right: auto;
+        }
     }
 
 

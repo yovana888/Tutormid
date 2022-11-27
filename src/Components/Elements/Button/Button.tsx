@@ -11,16 +11,17 @@ interface Props {
     type?: "button" | "submit" | "reset" | undefined;
     className?: string;
     style?: React.CSSProperties | undefined,
-    isGoogle?:boolean
+    isGoogle?:boolean;
+    responsiveRight?:boolean
 }
 
 //* por defecto: default-size y es primary(({prop1, prop2....}))
 
-function Button({ text, size = "default-size", color = "primary", type, disabled, onClick, icon, className, style, isGoogle=false }: Props) {
+function Button({ text, size = "default-size", color = "primary", type, disabled, onClick, icon, className, style, isGoogle=false, responsiveRight=false }: Props) {
     //la otra opcion es small-size
     if (size !== "default-size")
         return (
-            <ButtonElement onClick={onClick} type={type} className={`${className} ${size} ${color}`} style={style} disabled={disabled}>
+            <ButtonElement onClick={onClick} type={type} className={`${className} ${size} ${color} ${responsiveRight?'responsive-right':''}` } style={style} disabled={disabled}>
               {isGoogle && (<img src="/google.png" className="google"/>)} {text} {icon}
             </ButtonElement>
         );

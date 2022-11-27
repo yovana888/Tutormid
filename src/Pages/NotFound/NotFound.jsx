@@ -57,7 +57,9 @@ export default function NotFounf() {
       <Button text="Prueba" icon={<TiPlus />} color="outline-blue" /><br />
       <Button text="Prueba" color="outline" isGoogle /><br />
       <Button text="Btn sm" icon={<TiPlus />} color="outline-blue" size="small-size"/><br />
-    
+      <Button text="Btn Large 100%" size="lg-size" /> <br />
+
+
       <ContainerInline>
         <Button text="Prueba" color="info" icon={<TiPlus />} />
         <TextField name="prueba" placeholder="prueba" />
@@ -72,6 +74,7 @@ export default function NotFounf() {
         placeholder="Your Email"
       />
       <br />
+      {/**width 100% */}
       <TextField name="prueba2" label="100%" width100={true} /><br />
       {/*El container es alternativo*/}
       
@@ -84,7 +87,7 @@ export default function NotFounf() {
           onChange={handleSelect1}
         />
 
-        <p>Select sin la opcion de limpiar ni placeholder</p>
+        <p>Select sin la opcion de  ni placeholder</p>
         <Select
           options={optionList}
           value={selectedOption2}

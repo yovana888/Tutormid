@@ -7,9 +7,7 @@ import Filter  from './Filter/Filter'
 export default function Ads() {
   return (
     <BodyAds>
-      <section>
-        <Filter/>
-      </section>
+    <Filter/>
     <div className='container body'>
           <h3 className='results'>Se encontrarón  10 profesores</h3> 
           <AdsCards/>

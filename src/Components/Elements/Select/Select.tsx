@@ -13,7 +13,6 @@ import classNames from "classnames";
 export interface ISelectOption {
   value: string;
   label: string;
-  disabled: boolean;
 }
 
 export type isMultiType = true | false;
@@ -67,6 +66,7 @@ export interface ISelectProps {
   onFocus?: FocusEventHandler<HTMLInputElement>;
   isClearable?: boolean;
   isDisabled?: boolean;
+  isInputSearch?:boolean
 }
 
 export const Select: React.FC<ISelectProps> = ({
@@ -81,9 +81,11 @@ export const Select: React.FC<ISelectProps> = ({
   onFocus,
   isClearable = true,
   isDisabled = false,
+  isInputSearch = false
 }) => {
   return (
     <ReactSelect
+      components={ isInputSearch?{ DropdownIndicator:() => null , IndicatorSeparator:() => null }:{} }
       className={classNames("Select option", className)}
       isMulti={isMulti}
       options={options}
@@ -96,7 +98,6 @@ export const Select: React.FC<ISelectProps> = ({
       isClearable={isClearable}
       styles={colourStyles}
       isDisabled={isDisabled}
-      isOptionDisabled={(option: ISelectOption) => option.disabled}
     />
   );
 };

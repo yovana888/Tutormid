@@ -22,7 +22,6 @@ const styles = (): string => (`
     ::-webkit-input-placeholder {
         color:${colors.placeholderColor}
     }
-
 `);
 
 export const TextField = styled.input`

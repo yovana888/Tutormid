@@ -128,6 +128,25 @@ export const IconLogoMobile = styled.div`
   }
 `
 
+export const Buttons = styled.button`
+    width: 100%;
+    border: 2px solid #6B42DE ;
+    border-radius: 5px;
+    color: #6B42DE ;
+    background-color: ${colors.bgWhite};
+   
+`
+
+export const StyledIcons = styled.div`
+   margin-top: 16px;
+   display: flex;
+`
+export const ContainerModal = styled.div`
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+`
 
  
 

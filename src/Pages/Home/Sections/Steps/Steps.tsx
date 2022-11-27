@@ -41,8 +41,8 @@ export default function Steps() {
             <Row>
                 <Col md={12}  className='d-flex justify-content-center'>
                     <CardStep 
-                        title='3. Encuentra a tu Profesor' 
-                        text='Llegó la hora de tu sesión, trata de estar 5 minutos antes, y recuerda puedes solicitar que tu clase quede grabada.'
+                        title='3. Ingresa a tu Clase' 
+                        text='Llegó la hora de tu sesión, trata de estar 5 minutos antes, asi mismo puedes grabar tu clase'
                         icon={<BsCameraReelsFill/>}
                         color='green'
                     />

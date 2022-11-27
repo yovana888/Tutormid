@@ -1,0 +1,73 @@
+export default function TeacherCard() {
+  return (
+    <Container>
+      <Row>
+        <Col lg={4} md={6}>
+          <CardContent 
+          img='./Rectangle 974.png'
+          name='Lisa Sotelo Flores'
+          materia='Matemáticas'
+          description='Tutora de matemáticas para niños y adolescentes'
+          price='$15.00 / 1 hora'
+          calification='5.0'
+          />
+        </Col>
+
+        <Col lg={4} md={6}>
+          <CardContent 
+          img='./Rectangle 974.png'
+          name='Lisa Sotelo Flores'
+          materia='Matemáticas'
+          description='Tutora de matemáticas para niños y adolescentes'
+          price='$15.00 / 1 hora'
+          calification='5.0'
+          />
+        </Col>
+
+        <Col lg={4} md={6}>
+          <CardContent 
+          img='./Rectangle 974.png'
+          name='Lisa Sotelo Flores'
+          materia='Matemáticas'
+          description='Tutora de matemáticas para niños y adolescentes'
+          price='$15.00 / 1 hora'
+          calification='5.0'
+          />
+        </Col>
+
+        <Col lg={4} md={6}>
+          <CardContent 
+          img='./Rectangle 974.png'
+          name='Lisa Sotelo Flores'
+          materia='Matemáticas'
+          description='Tutora de matemáticas para niños y adolescentes'
+          price='$15.00 / 1 hora'
+          calification='5.0'
+          />
+        </Col>
+
+        <Col lg={4} md={6}>
+          <CardContent 
+          img='./Rectangle 974.png'
+          name='Lisa Sotelo Flores'
+          materia='Matemáticas'
+          description='Tutora de matemáticas para niños y adolescentes'
+          price='$15.00 / 1 hora'
+          calification='5.0'
+          />
+        </Col>
+        
+        <Col lg={4} md={6}>
+          <CardContent 
+          img='./Rectangle 974.png'
+          name='Lisa Sotelo Flores'
+          materia='Matemáticas'
+          description='Tutora de matemáticas para niños y adolescentes'
+          price='$15.00 / 1 hora'
+          calification='5.0'
+          />
+        </Col>
+      </Row>
+      </Container>
+  )
+}

@@ -1,13 +1,14 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
-import ButtonStyled from '../../Components/Elements/Button/ButtonStyled'
-
+import { Outlet } from 'react-router-dom';
+import Footer from '../../Components/Groups/Footer/Footer'; 
+import Navbar from '../../Components/Groups/Navbar/Navbar'
 export default function Main() {
+
   return (
     <div>
-      Main Layout
-      <ButtonStyled/>
-      <Outlet />
+      <Navbar/>
+        <Outlet />
+      <Footer />
     </div>
   )
 }

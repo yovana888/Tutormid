@@ -31,6 +31,7 @@ background-color: ${colors.bgWhite};
 .description {
     font-weight: 400;
     color: ${colors.cardDescriptionColor};
+    font-size: 14px;
 }
 
 .icons-section {
@@ -43,4 +44,6 @@ background-color: ${colors.bgWhite};
     font-weight: 500;
 }
 
+
 `;
+

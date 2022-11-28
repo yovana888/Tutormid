@@ -83,7 +83,7 @@ export default function NotFounf() {
           onChange={handleSelect1}
         />
 
-        <p>Select sin la opcion de limpiar ni placeholder</p>
+        <p>Select sin la opcion de  ni placeholder</p>
         <Select
           options={optionList}
           value={selectedOption2}

@@ -8,4 +8,8 @@ export const TeacherSection = styled.section `
         flex-direction:column;
         gap:20px;
         justify-content: center;
+
+    a {
+        text-decoration: none;
+    }
     `;

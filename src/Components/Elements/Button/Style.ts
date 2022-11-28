@@ -50,6 +50,10 @@ export const ButtonElement = styled.button`
         padding: 10px 20px;
     }
 
+    &.ads-size {
+        padding: 10px 90px;
+    }
+
     &.lg-size {
         padding: 10px 20px;
         width:100%;

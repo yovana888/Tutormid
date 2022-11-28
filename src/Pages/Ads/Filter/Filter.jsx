@@ -68,18 +68,17 @@ export default function Filter() {
       { value: "general", label: "Púbico General" },
     ];
 
-    const [selectedLevel, setSelectedLevel] = useState(levelList[2]);
+    const [selectedLevel, setSelectedLevel] = useState(null);
     function handleLevel(option) {
     setSelectedLevel(option);
     };
 
-function Clear () {
-  selectedMaterias = null;
-  
- alert ("no funciona")
-
-}
-
+    function clearFilters() {
+      handleMaterias(null)
+      handlePrecio(null)
+      handleDisponibility(null) 
+      setSelectedLevel(null)
+    }
 
     
   return (
@@ -130,7 +129,7 @@ function Clear () {
                   </div>
 
                   <div className='col-12 col-md-3'>
-                  <Button text="Limpiar Filtros" icon={<FiFilter/>} color="outline-blue" />
+                  <Button text="Limpiar Filtros" icon={<FiFilter/>} color="outline-blue" onClick={clearFilters} />
                   </div>
                 </div>
               </div>

@@ -5,6 +5,7 @@ import { AiFillStar } from 'react-icons/ai';
 import { BsChatText } from 'react-icons/bs';
 import { BsHeart } from 'react-icons/bs';
 import { AiOutlineClockCircle } from 'react-icons/ai';
+import { IconContext } from 'react-icons'
 
 
 
@@ -56,6 +57,7 @@ export default function AdsCards() {
 function AdsCardContent(props) {
   return(
     <BodyCard className='card-content row'>
+
       <section className='col-md-2 col-sm-12'>
             <img className='img-fluid' src={props.img} alt="" />
         </section>
@@ -67,10 +69,15 @@ function AdsCardContent(props) {
         </section>
 
         <section className='col-md-2 col-sm-12 '>
+
           <div className='d-flex icons-section'>
-            <p><AiFillStar color= "#FFC538" style={{paddingBottom: "4px" }} size='1.4rem'/>{props.calification}</p>
-            <p><BsChatText color= "#4D7DF9" style={{paddingBottom: "4px" }} size='1.4rem'/>{props.comments}</p>
-            <p><BsHeart color= "#FE374C" style={{paddingBottom: "4px" }} size='1.4rem' value={{className:'heart'}}/></p>
+            <IconContext.Provider value={{size: '1.3rem', style:{paddingBottom: "4px" } }}>
+              <p><AiFillStar color= "#FFC538" /> {props.calification}</p>
+
+              <p><BsChatText color= "#4D7DF9" /> {props.comments}</p>
+
+              <p><BsHeart color= "#FE374C"/></p>
+            </IconContext.Provider>
           </div>
 
           <div className='hours'>
@@ -80,7 +87,9 @@ function AdsCardContent(props) {
           <div>
             <Button text='Reservar' className='container-fluid'/>
           </div>
+
         </section>
+
     </BodyCard>
   )
 }

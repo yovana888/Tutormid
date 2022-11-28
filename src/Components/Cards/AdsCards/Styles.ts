@@ -44,4 +44,6 @@ background-color: ${colors.bgWhite};
     font-weight: 500;
 }
 
+
 `;
+

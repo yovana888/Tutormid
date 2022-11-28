@@ -4,8 +4,7 @@ import { Container, ContainerInline, Container50} from "./Style";
 import TextField from "../../Components/Elements/TextField/TextField";
 import { TfiEmail } from "react-icons/tfi";
 import { TiPlus } from "react-icons/ti";
-import  { Select }  from "../../Components/Elements/Select/Select";
-
+import { Select }  from "../../Components/Elements/Select/Select";
 
 export default function NotFounf() {
   /**option para el select ejemplo */
@@ -45,9 +44,6 @@ export default function NotFounf() {
   function handleSelect5(option) {
     setSelectedOption5(option);
   }
-
-
-
 
   return (
     <Container>
@@ -119,8 +115,6 @@ export default function NotFounf() {
         />
 
       </Container50>
-
-
     </Container>
   );
 }

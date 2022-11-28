@@ -21,14 +21,15 @@ interface IProps {
     label?: string;
     type?: 'text' | 'number' | 'email' | 'password' | 'date';
     name: string;
-    handleChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-    defaultValue?: string;
+    onChange?: any;
     isReadOnly?: boolean;
     width100?:boolean;
     isGroup?:boolean;
+    value?:string; 
+    options?:any;
 }
 
-const TextField = ({ classes="", icon=null, edge=null, placeholder="", label, type="text", name, handleChange, defaultValue="", isReadOnly=false, width100=false,isGroup }: IProps): JSX.Element => {
+const TextField = ({ classes="", icon=null, edge=null,options, placeholder="", label, type="text", name, onChange, isReadOnly=false, width100=false,value='' }: IProps): JSX.Element => {
 
     const [isFocus, setIsFocus] = useState<boolean>(false);
 
@@ -51,9 +52,9 @@ const TextField = ({ classes="", icon=null, edge=null, placeholder="", label, ty
                 placeholder={placeholder}
                 type={type}
                 name={name}
-                onChange={handleChange}
-                defaultValue={defaultValue}
+                onChange={onChange}
                 readOnly={isReadOnly}
+                value={value}
             />
 
             { edge === 'end' ? icon : null }

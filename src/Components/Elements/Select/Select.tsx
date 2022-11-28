@@ -56,7 +56,7 @@ export interface ISelectProps {
   isMulti?: isMultiType;
   options: ISelectOption[];
   placeholder?: string;
-  value: SingleValue<ISelectOption> | MultiValue<ISelectOption>;
+  value?: SingleValue<ISelectOption> | MultiValue<ISelectOption>;
   isSearchable?: boolean;
   onBlur?: FocusEventHandler<HTMLInputElement>;
   onChange?: (

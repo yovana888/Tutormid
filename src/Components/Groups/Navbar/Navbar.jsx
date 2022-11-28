@@ -12,8 +12,8 @@ import { FaBars,FaTimes } from 'react-icons/fa';
 import { NavDropdown } from 'react-bootstrap';
 import NewLink from '../../Elements/NewLink/NewLink'
 import Button from '../../Elements/Button/Button';
-import ModalLogin from './Modals/ModalLogin'
-import ModalRegister from './Modals/ModalRegister'
+import ModalLogin from './Modals/ModalLogin';
+import ModalRegister from './Modals/ModalRegister';
 
 export default function Navbar() {
 
@@ -39,7 +39,6 @@ export default function Navbar() {
   const toggleModalRegister = () => {
     setshowModalRegister(!showModalRegister)
   }
-
 
   return (
     <>

@@ -10,6 +10,7 @@ import AdsT from '../Pages/Teacher/Ads/AdsT';
 import PanelS from '../Pages/Student/Panel/PanelS';
 import Chat from '../Pages/Student/Chat/Chat';
 import PanelT from '../Pages/Teacher/Panel/PanelT';
+import { AuthProvider } from '../context/auth.context';
 
 export default function Router() {
   return (

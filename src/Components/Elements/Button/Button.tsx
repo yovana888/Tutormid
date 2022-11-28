@@ -17,7 +17,7 @@ interface Props {
 
 //* por defecto: default-size y es primary(({prop1, prop2....}))
 
-function Button({ text, size = "default-size", color = "primary", type, disabled, onClick, icon, className, style, isGoogle=false, responsiveRight=false }: Props) {
+function Button({ text, size = "default-size", color = "primary", type='button', disabled, onClick, icon, className, style, isGoogle=false, responsiveRight=false }: Props) {
     //la otra opcion es small-size
     if (size !== "default-size")
         return (

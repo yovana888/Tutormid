@@ -4,7 +4,7 @@ import { Container, ContainerInline, Container50} from "./Style";
 import TextField from "../../Components/Elements/TextField/TextField";
 import { TfiEmail } from "react-icons/tfi";
 import { TiPlus } from "react-icons/ti";
-import { Select }  from "../../Components/Elements/Select/Select";
+import { NewSelect }  from "../../Components/Elements/NewSelect/NewSelect";
 
 export default function NotFounf() {
   /**option para el select ejemplo */
@@ -76,7 +76,7 @@ export default function NotFounf() {
       
       <Container50>
         <p>Select Normal</p>
-        <Select
+        <NewSelect
           options={optionList}
           placeholder="Select color"
           value={selectedOption1}
@@ -84,7 +84,7 @@ export default function NotFounf() {
         />
 
         <p>Select sin la opcion de  ni placeholder</p>
-        <Select
+        <NewSelect
           options={optionList}
           value={selectedOption2}
           onChange={handleSelect2}
@@ -92,7 +92,7 @@ export default function NotFounf() {
         />
 
         <p>Select con Buscador</p>
-        <Select
+        <NewSelect
           options={optionList}
           value={selectedOption3}
           onChange={handleSelect3}
@@ -100,14 +100,14 @@ export default function NotFounf() {
         />
 
         <p>Default Value</p>
-        <Select
+        <NewSelect
           options={optionList}
           value={selectedOption4}
           onChange={handleSelect4}
         />
 
         <p>Select Multi</p>
-        <Select
+        <NewSelect
           options={optionList}
           value={selectedOption5}
           onChange={handleSelect5}

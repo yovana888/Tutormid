@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Button from '../../Elements/Button/Button';
-import { Select } from '../../Elements/Select/Select';
+import { NewSelect } from '../../Elements/NewSelect/NewSelect';
 import { ContainerInline } from './Style'
 export default function NewInputGroup() {
     
@@ -23,7 +23,7 @@ export default function NewInputGroup() {
 
     return (
         <ContainerInline>
-            <Select
+            <NewSelect
                 options={optionList}
                 placeholder="¿Qué te interesa aprender?"
                 value={selectedOption1}

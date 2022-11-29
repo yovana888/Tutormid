@@ -3,7 +3,7 @@ import NewModal from "../../NewModal/NewModal";
 import Button from "../../../Elements/Button/Button";
 import TextField from "../../../Elements/TextField/TextField";
 import Line from "../../../Elements/Line/Line";
-import { Select } from "../../../Elements/Select/Select";
+import { NewSelect } from "../../../Elements/NewSelect/NewSelect";
 import { TfiEmail, TfiEye } from "react-icons/tfi";
 import { ContainerForm } from "./Style";
 import { registerService, registerGoogleService } from "../../../../supabase/services/auth";
@@ -20,13 +20,13 @@ export default function ModalRegister({ isOpen, toggle }) {
   const [rol, setRol] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isShowPassword, setIsShowPassword] = useState(false);
-  const [input, setInput] = useState<IUser>({
+  const [input, setInput] = useState({
     email:'',
     password:'',
     rol:''
    });
 
-  const [formErrors, setFormErrors] = useState<any>({ 
+  const [formErrors, setFormErrors] = useState({ 
     email:'',
     password:'',
     rol:''
@@ -131,7 +131,7 @@ const registerByGoogle =async ()=>{
     <NewModal isOpen={isOpen} toggle={toggle} title={"Únase a Tutormid hoy"}>
       <>
       <ContainerForm onSubmit={handlerSubmit}>
-        <Select
+        <NewSelect
           options={roles}
           placeholder="Seleccione su Rol"
           value={rol}

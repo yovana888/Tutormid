@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Select} from '../../../Components/Elements/Select/Select'
+import { NewSelect} from '../../../Components/Elements/NewSelect/NewSelect'
 import { FilterStyled } from './Styles';
 import Button from '../../../Components/Elements/Button/Button';
 import { FiFilter } from 'react-icons/fi';
@@ -87,7 +87,7 @@ export default function Filter() {
           <div className='row'>
             <div className='col-12 col-md-2'>
               <p>Aprendo:</p>
-              <Select
+              <NewSelect
                 options={materiasList}
                 value={selectedMaterias}
                 onChange={handleMaterias}
@@ -101,7 +101,7 @@ export default function Filter() {
               <div className='teacher-filter'>
                 <div className='row'>
                   <div className='col-12 col-sm-4 col-md-3 mb-1'>
-                    <Select
+                    <NewSelect
                       options={precioList}
                       placeholder="Precio"
                       value={selectedPrecio}
@@ -110,7 +110,7 @@ export default function Filter() {
                   </div>
 
                   <div className='col-12 col-sm-4 col-md-3 mb-1'>
-                    <Select
+                    <NewSelect
                       options={disponibilityList}
                       placeholder="Disponibilidad"
                       value={selectedDisponibility}
@@ -119,7 +119,7 @@ export default function Filter() {
                   </div>
 
                   <div className='col-12 col-sm-4 col-md-3 mb-1'>
-                    <Select
+                    <NewSelect
                       options={levelList}
                       value={selectedLevel}
                       placeholder="Niveles"

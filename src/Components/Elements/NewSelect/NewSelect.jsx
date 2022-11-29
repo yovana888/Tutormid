@@ -1,12 +1,7 @@
 import React, { FocusEventHandler } from "react";
 import { colors } from "../../../Styles/colors";
-import {
-  ActionMeta,
-  default as ReactSelect,
-  MultiValue,
-  OnChangeValue,
-  SingleValue,
-} from "react-select";
+import Select  from 'react-select' 
+
 
 import classNames from "classnames";
 
@@ -45,7 +40,7 @@ const colourStyles = {
 };
 
 
-export const Select = ({
+export const NewSelect = ({
   className,
   isMulti = false,
   isSearchable = false,
@@ -60,7 +55,7 @@ export const Select = ({
   isInputSearch = false
 }) => {
   return (
-    <ReactSelect
+    <Select
       components={ isInputSearch?{ DropdownIndicator:() => null , IndicatorSeparator:() => null }:{} }
       className={classNames("Select option", className)}
       isMulti={isMulti}

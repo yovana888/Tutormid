@@ -10,7 +10,7 @@ import Form from 'react-bootstrap/Form';
 
 export default function ModalLogin({ isOpen, toggle }) {
 
-  const [input, setInput] = useState<IUser>({
+  const [input, setInput] = useState({
     email:'',
     password:''
    });

@@ -38,7 +38,6 @@ const TextField = ({ classes="", icon=null, edge=null, placeholder="", label, ty
                 name={name}
                 onChange={onChange}
                 readOnly={isReadOnly}
-                value={value}
             />
 
             { edge === 'end' ? icon : null }

@@ -86,14 +86,15 @@ export default function Navbar() {
       </NavbarContainer>
 
       {  /* ------------------------------ Modal Login  ------------------------------*/}
-      <ModalLogin
+      <ModalLogin 
+        
         isOpen={showModalLogin}
         toggle={toggleModalLogin}
       />
 
       {  /* ------------------------------ Modal Register  ------------------------------*/}
       <ModalRegister
-        isOpen={showModalRegister}
+         isOpen={showModalRegister}
         toggle={toggleModalRegister}
       />
 

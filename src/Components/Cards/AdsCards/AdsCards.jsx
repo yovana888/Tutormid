@@ -85,7 +85,7 @@ function AdsCardContent(props) {
           </div>
 
           <div>
-            <Button text='Reservar' className='container-fluid'/>
+            <Button text='Reservar Clase' className='container-fluid'/>
           </div>
 
         </section>

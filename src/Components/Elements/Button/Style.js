@@ -15,9 +15,10 @@ export const ButtonElement = styled.button`
     font-weight: 400;
     font-size: 16px;
     line-height: 40px;
+    
     white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
+    text-overflow: ellipsis;
+    overflow: hidden;
 
     transition: all 0.3s ease-out;
 

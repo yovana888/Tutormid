@@ -15,7 +15,7 @@ import { ContainerTextField, Input, ContainerInput,Label } from './Style';
 
 const TextField = ({ classes="", icon=null, edge=null, placeholder="", label, type="text", name, onChange, isReadOnly=false, width100=false,value='' })=> {
 
-    const [isFocus, setIsFocus] = useState<boolean>(false);
+    const [isFocus, setIsFocus] = useState(false);
 
     return <ContainerTextField
         className={classes}

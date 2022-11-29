@@ -3,14 +3,8 @@ import { Modal } from "react-bootstrap";
 import { IoIosArrowBack } from "react-icons/io";
 import { NewHeaderModal,ModalTitle, NewBodyModal } from "./Style";
 
-interface Props {
-    toggle: any;
-    isOpen:boolean;
-    title:string;
-    children: JSX.Element,
-  }
 
-  export default function NewModal({ isOpen,toggle,children,title }: Props) {
+  export default function NewModal({ isOpen,toggle,children,title }) {
 
     return (
         <Modal show={isOpen} onHide={toggle}  scrollable={true} centered>

@@ -1,17 +1,15 @@
-import React, { useContext, useState, useEffect, createContext } from 'react';
-import { supabase } from '../supabase/client';
+import React, { useState,useEffect} from 'react'
+import { supabase } from '../supabase/client'; 
+export const AuthContext = React.createContext()
 
-// create a context for authentication
-const AuthContext = createContext();
+function AuthContextProvider({children}){
 
-export const AuthProvider = ({ children }) => {
-  // create state values for user data and loading
   const [user, setUser] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // get session data if there is an active session
-    const session = supabase.auth.getSession();
+    const session = supabase.auth.session();
 
     setUser(session?.user ?? null);
     setLoading(false);
@@ -38,15 +36,12 @@ export const AuthProvider = ({ children }) => {
     user,
   };
 
-  // use a provider to pass down the value
   return (
+    
     <AuthContext.Provider value={value}>
-      {!loading && children}
+        {!loading && children}
     </AuthContext.Provider>
-  );
-};
+  )
+}
 
-// export the useAuth hook
-export const useAuth = () => {
-  return useContext(AuthContext);
-};
+export default AuthContextProvider

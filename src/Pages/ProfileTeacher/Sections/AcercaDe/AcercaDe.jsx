@@ -6,12 +6,12 @@ import { BsFillPersonLinesFill } from 'react-icons/bs';
 
 export default function AcercaDe() {
   return (
-    <AcercaBody className='container'>
-        <div className='detailSection '>
-            <div className=''>
-                <img className='img-fluid image' src="./Ellipse 30.svg" alt="" />
+    <AcercaBody className='container-fluid'>
+        <div className='detailSection row'>
+            <div className='col-12 col-md-4 col-lg-3 text-center'>
+                <img className='image' src="./Ellipse 30.svg" alt="" />
             </div>
-            <div className='details'>
+            <div className='details col-12 col-md-8 col-lg-9'>
                 <IconContext.Provider value={{size: '1.3rem', style:{paddingBottom: "4px" } }}>
                 <h4 className='name'>Lisa Sotelo Flores</h4>
                 <h5 className='materia'><VscBook/> Matemáticas  General </h5>
@@ -19,7 +19,7 @@ export default function AcercaDe() {
                 </IconContext.Provider>
             </div>
         </div>
-        <div>
+        <div className='mt-5'>
             <h4 className='acerca'>Acerca del Profesor</h4>
             <p className='description'>Tengo más de 5 años de experiencia dando clases de matemáticas, y me he dado cuenta de que lo más importante es la confianza del alumno con el profesor/tutor, de ahí que lo primero que hago es preguntarle al alumno todas las dudas que pueda tener. , luego les sigo explicando ejercicios relacionados con el tema y luego, cuando están seguros les dejo ejercicios para que lo hagan, y por supuesto los corrijo. 
 

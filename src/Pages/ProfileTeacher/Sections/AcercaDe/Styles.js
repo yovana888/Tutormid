@@ -5,19 +5,19 @@ export const AcercaBody = styled.div `
     background-color: ${colors.bgWhite};
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(18.5rem, 53rem));
-    width: 53rem;
+    /* width: 53rem; */
     font-family: 'Inter';
     padding: 2rem 3rem;
     box-sizing: border-box;
     border: 1px solid #D4D6DB;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
-    margin-left: 5rem;
+    /* margin-left: 5rem; */
 
 
 .detailSection {
-    display: flex;
-    margin-bottom: 2.8rem;
+    /* display: flex;
+    margin-bottom: 2.8rem; */
 }
 
 .details {

@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../../Elements/Button/Button'
 import {BodyCard} from './Styles'
 import { AiFillStar } from 'react-icons/ai';
 import { BsChatText } from 'react-icons/bs';
-import { BsHeart } from 'react-icons/bs';
+
 import { AiOutlineClockCircle } from 'react-icons/ai';
 import { IconContext } from 'react-icons'
+import FavButton from '../../Elements/FavButton/FavButton';
 
 
 
@@ -54,7 +55,9 @@ export default function AdsCards() {
   )
 }
 
+
 function AdsCardContent(props) {
+
   return(
     <BodyCard className='card-content row'>
 
@@ -76,7 +79,8 @@ function AdsCardContent(props) {
 
               <p><BsChatText color= "#4D7DF9" /> {props.comments}</p>
 
-              <p><BsHeart color= "#FE374C"/></p>
+              <p><FavButton /></p>
+
             </IconContext.Provider>
           </div>
 
@@ -93,3 +97,4 @@ function AdsCardContent(props) {
     </BodyCard>
   )
 }
+

@@ -3,7 +3,7 @@ import React from 'react'
 export default function PanelS() {
   return (
     <div>
-      Panel
+      Panel Estudiante
     </div>
   )
 }

@@ -5,7 +5,7 @@ import TextField from "../../../Elements/TextField/TextField";
 import Line from "../../../Elements/Line/Line";
 import { useFormik } from 'formik';
 import { NewSelect } from "../../../Elements/NewSelect/NewSelect";
-import { TfiEmail, TfiEye } from "react-icons/tfi";
+import { TfiEmail, TfiEye, TfiUser } from "react-icons/tfi";
 import { ContainerForm } from "./Style";
 import { validationSchemaRegister } from "../../../../validators/auth"
 import { TextError } from "../../../Elements/TextValidate/TextValidate"
@@ -33,7 +33,8 @@ export default function ModalRegister({ isOpen, toggle }) {
     initialValues: {
       email: '',
       password: '',
-      rol: ''
+      rol: '',
+      fullname:''
     },
     validationSchema: validationSchemaRegister,
     isInitialValid: false,
@@ -68,11 +69,20 @@ export default function ModalRegister({ isOpen, toggle }) {
   /****************************Funcion para auth Google****************************** ****/
 
     const registerByGoogle =async ()=>{
-      setIsLoadingGoogle(true)
-      await registerGoogleService()
-      .then(res=>console.log(res))
-      .catch(e=>console.log(e))
-      .finally(()=>{setIsLoadingGoogle(false)})
+      try {
+        if (rol==null) throw "Debe selecionar un rol!";
+        setIsLoadingGoogle(true);
+        await registerGoogleService().then(res => {
+          localStorage.setItem('GoogleRol',rol.value);
+          resetForm();
+          toggle();
+          setIsLoadingGoogle(false);
+        })
+      } catch (error) {
+        toast.error(error, {
+          position: toast.POSITION.TOP_RIGHT
+        });
+      }
     }
 
   /****************************Funcion para cuando cambia el select****************************** */
@@ -113,6 +123,7 @@ export default function ModalRegister({ isOpen, toggle }) {
           {formik.touched.rol && formik.errors.rol && (
             <TextError>{formik.errors.rol}</TextError>
           )}
+
           <Button
             text={isLoadingGoogle ? 'Procesando...' : 'Registrate con Google'}
             color="outline"
@@ -125,6 +136,23 @@ export default function ModalRegister({ isOpen, toggle }) {
           />
 
           <Line />
+
+          <TextField
+            icon={<TfiUser />}
+            edge="end"
+            label="Nombre y Apellidos"
+            type="text"
+            placeholder=""
+            width100={true}
+            name='fullname'
+            onChange={formik.handleChange}
+            value={formik.values.fullname}
+          />
+
+          {formik.touched.fullname && formik.errors.fullname && (
+            <TextError>{formik.errors.fullname}</TextError>
+          )}
+
           <TextField
             icon={<TfiEmail />}
             edge="end"

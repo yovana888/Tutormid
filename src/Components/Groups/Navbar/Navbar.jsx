@@ -1,30 +1,31 @@
-import React, { useState } from 'react'
-import {
-  NavbarContainer, 
-  NavbarWrapper, 
-  IconLogo,
-  Menu,
-  MenuItem,
-  IconLogoMobile,
-} from './Style'
-
+import React, { useState,useContext} from 'react'
 import { FaBars,FaTimes } from 'react-icons/fa';
 import { NavDropdown } from 'react-bootstrap';
 import NewLink from '../../Elements/NewLink/NewLink'
 import Button from '../../Elements/Button/Button';
 import ModalLogin from './Modals/ModalLogin';
 import ModalRegister from './Modals/ModalRegister';
+import { AuthContext } from '../../../context/auth.context';
+
+import {
+  NavbarContainer,
+  NavbarWrapper,
+  IconLogo,
+  Menu,
+  MenuItem,
+  IconLogoMobile,
+  NameUser
+} from './Style'
+
 
 export default function Navbar() {
-
+  const {isLogin, user, logout} = useContext(AuthContext);
   const [click, setClick] = useState(false);
-  const [isLogin, setIsLogin] = useState(false);
 
   const ChangeClick = () => {
     setClick(!click);
   }
-  const handleLogin = () => setIsLogin(!isLogin);
-  const handleLogout = () => setIsLogin(false);
+
 
   // ------------------------------Acciones para Abrir Modal Login------------------------------
 
@@ -65,10 +66,10 @@ export default function Navbar() {
                 <>
                   <MenuItem>
                     <NavDropdown title={
-                      <span style={{ marginRight: "10px" }}>Bienvenido(a) <img src='./src/assets/icon-user.svg' /></span>
+                      <NameUser>{user.full_name.split(' ')[0]} <img src={user.photo_url} /></NameUser>
                     } id="navbarScrollingDropdown">
-                      <NavDropdown.Item href="#">Mi cuenta</NavDropdown.Item>
-                      <NavDropdown.Item href="#!" onClick={() => handleLogout()}>Salir</NavDropdown.Item>
+                      <NavDropdown.Item>Mi cuenta</NavDropdown.Item>
+                      <NavDropdown.Item onClick={() => logout()}>Salir</NavDropdown.Item>
                     </NavDropdown>
                   </MenuItem>
                 </>
@@ -86,8 +87,7 @@ export default function Navbar() {
       </NavbarContainer>
 
       {  /* ------------------------------ Modal Login  ------------------------------*/}
-      <ModalLogin 
-        
+      <ModalLogin
         isOpen={showModalLogin}
         toggle={toggleModalLogin}
       />

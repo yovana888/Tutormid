@@ -1,47 +1,88 @@
-import React, { useState,useEffect} from 'react'
-import { supabase } from '../supabase/client'; 
-export const AuthContext = React.createContext()
+import React, { useState, useEffect } from "react";
+import {
+  getUserData,
+  setProfileByGoogleService,
+} from "../supabase/services/user";
+import { toast } from "react-toastify";
+import { supabase } from "../supabase/client";
 
-function AuthContextProvider({children}){
+export const AuthContext = React.createContext();
 
-  const [user, setUser] = useState();
-  const [loading, setLoading] = useState(true);
+export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState({});
+  const [isLogin, setIsLogin] = useState(false);
+  const rolLocal = localStorage.getItem("googleRol");
 
   useEffect(() => {
-    // get session data if there is an active session
-    const session = supabase.auth.session();
-
-    setUser(session?.user ?? null);
-    setLoading(false);
-
-    // listen for changes to auth
-    const { data: listener } = supabase.auth.onAuthStateChange(
-      (event, session) => {
-        setUser(session?.user ?? null);
-        setLoading(false);
-      }
-    );
-
-    // cleanup the useEffect hook
-    return () => {
-      listener?.unsubscribe();
-    };
+    if (rolLocal) {
+      //procedemos a registrar esos datos en la tabla rol_users
+      registerProfileGoogle();
+    } else {
+      fetchUser();
+    }
   }, []);
 
-  // create signUp, signIn, signOut functions
-  const value = {
-    signUp: data => supabase.auth.signUp(data),
-    signIn: data => supabase.auth.signIn(data),
-    signOut: () => supabase.auth.signOut(),
-    user,
+  const fetchUser = async () => {
+    try {
+      const { error, data } = await supabase.auth.getSession();
+      if (error) throw error;
+      if (data.session) {
+        const userProfile = await getUserData(data.session.user.id);
+        if (userProfile.status === 500) throw userProfile.message;
+        if (userProfile.length > 0) {
+          setUser(userProfile[0]);
+          setIsLogin(true);
+        } else {
+          await logout();
+          throw "Usted no se encuentra registrado";
+        }
+      }
+    } catch (error) {
+      toast.error(error.toString(), {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    }
   };
 
-  return (
-    
-    <AuthContext.Provider value={value}>
-        {!loading && children}
-    </AuthContext.Provider>
-  )
-}
+  const registerProfileGoogle = async () => {
+    const res = await setProfileByGoogleService(rolLocal);
+    if (res) {
+      localStorage.removeItem("googleRol");
+      fetchUser();
+    }
+    if (res.status === 500) {
+      toast.error(res.message.toString(), {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    }
+  };
 
-export default AuthContextProvider
+  const logout = async () => {
+    try {
+      const { error } = await supabase.auth.signOut();
+      if (error) throw error;
+      setIsLogin(false);
+    } catch (error) {
+      toast.error(error.toString() || "Ocurrio un error al cerrar sesion", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    }
+  };
+
+  {
+    /** isLogin, lo necesitameros para las rutas
+       setIsLogin, es paar cuando el usuario se loguea si es exitoso, entoces cambiamos false por true
+       user, es toda la data del usuario
+       setUser, es por ejemplo cuando yo actualice mi profile tiene que cambiar esta variable para todos
+       Logout es la funcion que me permite cerar sesion
+    **/
+  }
+
+  return (
+    <AuthContext.Provider
+      value={{ isLogin, setIsLogin, user, setUser, logout, fetchUser }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
+};

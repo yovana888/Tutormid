@@ -147,7 +147,17 @@ export const ContainerModal = styled.div`
   display: flex;
   flex-direction: column;
 `
-
+export const NameUser = styled.span`
+    color: ${colors.textColor}; 
+    font-weight: 450;
+    font-size: 18px;
+    >img{
+      border-radius:50%;
+      height:35px;
+      width:35px;
+      margin-left:8px;
+    }
+  `
  
 
 

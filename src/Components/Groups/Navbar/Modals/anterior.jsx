@@ -6,7 +6,7 @@ import Line from "../../../Elements/Line/Line";
 import { NewSelect } from "../../../Elements/NewSelect/NewSelect";
 import { TfiEmail, TfiEye } from "react-icons/tfi";
 import { ContainerForm } from "./Style";
-import { registerService, registerGoogleService } from "../../../../supabase/services/auth";
+import { registerService, sesionGoogleService } from "../../../../supabase/services/auth";
 import { validate } from "../../../../validators/auth.validator"
 import { TextError } from "../../../Elements/TextValidate/TextValidate"
 import {toast } from 'react-toastify';
@@ -121,7 +121,7 @@ const handlerSubmit = async(event) => {
 }
 
 const registerByGoogle =async ()=>{
-    await registerGoogleService()
+    await sesionGoogleService()
     .then(res=>console.log(res))
     .catch(e=>console.log(e))
 }

@@ -9,7 +9,7 @@ import { TfiEmail, TfiEye, TfiUser } from "react-icons/tfi";
 import { ContainerForm } from "./Style";
 import { validationSchemaRegister } from "../../../../validators/auth"
 import { TextError } from "../../../Elements/TextValidate/TextValidate"
-import { registerService, registerGoogleService } from "../../../../supabase/services/auth";
+import { registerService, sesionGoogleService } from "../../../../supabase/services/auth";
 import { toast } from 'react-toastify';
 
 
@@ -50,15 +50,18 @@ export default function ModalRegister({ isOpen, toggle }) {
       setIsLoading(true);
 
       await registerService(values).then(res => {
-        toast.info('Revisa tu correo, para confirmar tu cuenta', {
-          position: toast.POSITION.TOP_RIGHT
-        });
-        resetForm();
-        toggle();
+        if(res){
+          toast.info('Revisa tu correo, para confirmar tu cuenta', {
+            position: toast.POSITION.TOP_RIGHT
+          });
+          resetForm();
+          toggle();
+        }
+        if (res?.status == 500) throw res.message;
       })
 
     } catch (err) {
-      toast.error(err.message || "Ocurrio un error, intentelo mas tarde", {
+      toast.error(err.toString() || "Ocurrio un error, intentelo mas tarde", {
         position: toast.POSITION.TOP_RIGHT
       });
     } finally {
@@ -72,16 +75,17 @@ export default function ModalRegister({ isOpen, toggle }) {
       try {
         if (rol==null) throw "Debe selecionar un rol!";
         setIsLoadingGoogle(true);
-        await registerGoogleService().then(res => {
-          localStorage.setItem('GoogleRol',rol.value);
+        await sesionGoogleService().then(res => {
+          localStorage.setItem('googleRol',rol.value);
           resetForm();
           toggle();
-          setIsLoadingGoogle(false);
         })
       } catch (error) {
         toast.error(error, {
           position: toast.POSITION.TOP_RIGHT
         });
+      } finally{
+        setIsLoadingGoogle(false);
       }
     }
 
@@ -124,18 +128,18 @@ export default function ModalRegister({ isOpen, toggle }) {
             <TextError>{formik.errors.rol}</TextError>
           )}
 
-          <Button
-            text={isLoadingGoogle ? 'Procesando...' : 'Registrate con Google'}
-            color="outline"
-            size="lg-size"
-            type="button"
-            isGoogle
-            className="mt-2"
-            disabled={isLoadingGoogle ? true : false}
-            onClick={registerByGoogle}
-          />
+           <Button
+              text={isLoadingGoogle ? 'Procesando...' : 'Registrate con Google'}
+              color="outline"
+              size="lg-size"
+              type="button"
+              isGoogle
+              className="mt-2"
+              disabled={isLoadingGoogle ? true : false}
+              onClick={registerByGoogle}
+            />
 
-          <Line />
+            <Line />
 
           <TextField
             icon={<TfiUser />}

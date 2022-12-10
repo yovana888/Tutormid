@@ -33,7 +33,7 @@ export const CardStyle = styled(Card)`
     display: flex;
     justify-content: space-evenly;
     font-weight: 500;
-    color: ${colors.priceCardColor};
+    color: ${colors.darkPrimaryColor};
 }
 
 .btn-area {

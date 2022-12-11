@@ -6,7 +6,7 @@ import Button from '../../Elements/Button/Button';
 import ModalLogin from './Modals/ModalLogin';
 import ModalRegister from './Modals/ModalRegister';
 import ModalForgetPass from './Modals/ModalForgetPass';
-
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/auth.context';
 
 import {
@@ -77,7 +77,7 @@ export default function Navbar() {
                     <NavDropdown title={
                       <NameUser>{user.full_name.split(' ')[0]} <img src={user.photo_url} /></NameUser>
                     } id="navbarScrollingDropdown">
-                      <NavDropdown.Item>Mi cuenta</NavDropdown.Item>
+                      <NavDropdown.Item><Link to={user.rol=="estudiante"?"/student":"/teacher"}  style={{ textDecoration: 'none' }}>Mi Cuenta</Link></NavDropdown.Item>
                       <NavDropdown.Item onClick={() => logout()}>Salir</NavDropdown.Item>
                     </NavDropdown>
                   </MenuItem>

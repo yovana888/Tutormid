@@ -1,11 +1,11 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom';
-import NavbarStd from '../../Pages/Student/Panel/Navbar/NavbarStd'
+import NavbarDashboard from '../../Components/Groups/NavbarDashboard/NavbarDashboard'
 export default function Dashboard() {
   return (
-    <div>
-        <NavbarStd/>
+    <>
+        <NavbarDashboard/>
          <Outlet />
-    </div>
+    </>
   )
 }

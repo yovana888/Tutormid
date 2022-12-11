@@ -1,7 +1,4 @@
 import React from 'react'
-import Col from 'react-bootstrap/Col'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
 import { CardStyle,CardImage, CardName,CardMateria,CardBody, CardDescription, Price, Calification,ContainerCard } from './Style'
 import { BsClockFill } from 'react-icons/bs';
 import { AiFillStar } from 'react-icons/ai';

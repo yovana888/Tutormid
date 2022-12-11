@@ -11,10 +11,10 @@ import { validationSchemaRegister } from "../../../../validators/auth"
 import { TextError } from "../../../Elements/TextValidate/TextValidate"
 import { registerService, sesionGoogleService } from "../../../../supabase/services/auth";
 import { toast } from 'react-toastify';
+import NewLink from "../../../Elements/NewLink/NewLink";
 
 
-
-export default function ModalRegister({ isOpen, toggle }) {
+export default function ModalRegister({ isOpen, toggle, toggleModalLogin }) {
 
   const roles = [
     { value: "docente", label: "Docente" },
@@ -37,7 +37,7 @@ export default function ModalRegister({ isOpen, toggle }) {
       fullname:''
     },
     validationSchema: validationSchemaRegister,
-    isInitialValid: false,
+    isInitialValid: true,
     onSubmit: function (values) {
       registerUser(values)
     }
@@ -197,7 +197,16 @@ export default function ModalRegister({ isOpen, toggle }) {
             disabled={isLoading ? true : false}
           />
         </ContainerForm>
-
+        <div className="d-flex justify-content-between mt-4">
+          <p> Ya tienes una cuenta? </p>
+          <NewLink
+            name="Ingresa aquí"
+            onClick={() => {
+              toggle();
+              toggleModalLogin();
+            }}
+          />
+        </div>
       </>
     </NewModal>
   );

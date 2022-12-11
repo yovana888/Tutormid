@@ -5,6 +5,8 @@ import NewLink from '../../Elements/NewLink/NewLink'
 import Button from '../../Elements/Button/Button';
 import ModalLogin from './Modals/ModalLogin';
 import ModalRegister from './Modals/ModalRegister';
+import ModalForgetPass from './Modals/ModalForgetPass';
+
 import { AuthContext } from '../../../context/auth.context';
 
 import {
@@ -39,6 +41,13 @@ export default function Navbar() {
   const [showModalRegister, setshowModalRegister] = useState(false);
   const toggleModalRegister = () => {
     setshowModalRegister(!showModalRegister)
+  }
+
+  // ------------------------------Acciones para Abrir Modal Forget Password------------------------------
+
+  const [showModalPassword, setshowModalPassword] = useState(false);
+  const toggleModalPassword = () => {
+    setshowModalPassword(!showModalPassword)
   }
 
   return (
@@ -90,12 +99,21 @@ export default function Navbar() {
       <ModalLogin
         isOpen={showModalLogin}
         toggle={toggleModalLogin}
+        toggleModalRegister={toggleModalRegister}
+        toggleModalPassword={toggleModalPassword}
       />
 
       {  /* ------------------------------ Modal Register  ------------------------------*/}
       <ModalRegister
-         isOpen={showModalRegister}
-        toggle={toggleModalRegister}
+          isOpen={showModalRegister}
+          toggle={toggleModalRegister}
+          toggleModalLogin={toggleModalLogin}
+      />
+
+{     /* ------------------------------ Modal Password  ------------------------------*/}
+      <ModalForgetPass
+          isOpen={showModalPassword}
+          toggle={toggleModalPassword}
       />
 
     </>

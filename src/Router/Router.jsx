@@ -10,6 +10,7 @@ import AdsT from "../Pages/Teacher/Ads/AdsT";
 import PanelS from "../Pages/Student/Panel/PanelS";
 import Chat from "../Pages/Student/Chat/Chat";
 import PanelT from "../Pages/Teacher/Panel/PanelT";
+import ResetPassword from "../Pages/ResetPassword/ResetPassword";
 
 import { AuthProvider } from "../context/auth.context";
 
@@ -34,6 +35,7 @@ export default function Router() {
             <Route element={<Chat />} path="chat" />
           </Route>
 
+          <Route element={<ResetPassword />} path="/reset" />
           <Route element={<NotFound />} path="*" />
         </Routes>
       </BrowserRouter>

@@ -15,7 +15,6 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     if (rolLocal) {
-      //procedemos a registrar esos datos en la tabla rol_users
       registerProfileGoogle();
     } else {
       fetchUser();

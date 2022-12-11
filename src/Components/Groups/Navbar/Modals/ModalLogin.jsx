@@ -12,14 +12,15 @@ import { validationSchemaLogin } from "../../../../validators/auth";
 import { login } from "../../../../supabase/services/auth";
 import { AuthContext } from "../../../../context/auth.context";
 import { toast } from "react-toastify";
-import { sesionGoogleService } from "../../../../supabase/services/auth"
+import { sesionGoogleService } from "../../../../supabase/services/auth";
+import Line from "../../../Elements/Line/Line";
 
-export default function ModalLogin({ isOpen, toggle }) {
+export default function ModalLogin({ isOpen, toggle, toggleModalRegister, toggleModalPassword }) {
   const { fetchUser } = useContext(AuthContext);
   const [isLoading, setIsLoading] = useState(false);
   const [isShowPassword, setIsShowPassword] = useState(false);
   const [isLoadingGoogle, setIsLoadingGoogle] = useState(false);
- 
+
   /****************************Inicializamos Formik*************************************** */
 
   const formik = useFormik({
@@ -34,7 +35,7 @@ export default function ModalLogin({ isOpen, toggle }) {
     },
   });
 
-   /****************************Funcion para Iniciar Sesion*************************************** */
+  /****************************Funcion para Iniciar Sesion*************************************** */
   const loginUser = async (values) => {
     try {
       setIsLoading(true);
@@ -55,24 +56,23 @@ export default function ModalLogin({ isOpen, toggle }) {
 
   /****************************Funcion para auth Google****************************** ****/
 
-  const loginByGoogle =async ()=>{
+  const loginByGoogle = async () => {
     try {
       setIsLoadingGoogle(true);
-      await sesionGoogleService().then(res => {
+      await sesionGoogleService().then((res) => {
         resetForm();
         toggle();
-      })
+      });
     } catch (error) {
       toast.error(error.toString(), {
-        position: toast.POSITION.TOP_RIGHT
+        position: toast.POSITION.TOP_RIGHT,
       });
-    }finally{
+    } finally {
       setIsLoadingGoogle(false);
     }
-  }
+  };
 
-
-/**************************** Funcion para resetear el form*************************************** */
+  /**************************** Funcion para resetear el form*************************************** */
 
   const resetForm = () => {
     formik.resetForm();
@@ -83,23 +83,16 @@ export default function ModalLogin({ isOpen, toggle }) {
     <NewModal isOpen={isOpen} toggle={toggle} title={"Bienvenido a Tutormid"}>
       <>
         <ContainerForm onSubmit={formik.handleSubmit}>
-          
-            <Button
-              text={isLoadingGoogle ? 'Procesando...' : 'Ingresa con Google'}
-              isGoogle
-              color="outline"
-              size="lg-size"
-              disabled={isLoadingGoogle ? true : false}
-              onClick={loginByGoogle}
-            />
-         
+          <Button
+            text={isLoadingGoogle ? "Procesando..." : "Ingresa con Google"}
+            isGoogle
+            color="outline"
+            size="lg-size"
+            disabled={isLoadingGoogle ? true : false}
+            onClick={loginByGoogle}
+          />
+          <Line />
 
-          <div className="d-flex py-3">
-            <img src="./src/assets/line.svg" className="px-2" alt="" />
-            <img src="./src/assets/icon-circle.svg" className="px-2" alt="" />
-            <img src="./src/assets/line.svg" className="px-4" alt="" />
-          </div>
-           
           <TextField
             icon={<TfiEmail />}
             edge="end"
@@ -142,7 +135,8 @@ export default function ModalLogin({ isOpen, toggle }) {
             <NewLink
               name="Olvide mi contraseña"
               onClick={() => {
-                console.log("hice click");
+                toggle();
+                toggleModalPassword();
               }}
             />
           </div>
@@ -160,7 +154,8 @@ export default function ModalLogin({ isOpen, toggle }) {
           <NewLink
             name="Crea una cuenta"
             onClick={() => {
-              console.log("hice click");
+              toggle();
+              toggleModalRegister();
             }}
           />
         </div>

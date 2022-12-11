@@ -1,8 +1,10 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom';
+import NavbarStd from '../../Pages/Student/Panel/Navbar/NavbarStd'
 export default function Dashboard() {
   return (
-    <div>Dashboard
+    <div>
+        <NavbarStd/>
          <Outlet />
     </div>
   )

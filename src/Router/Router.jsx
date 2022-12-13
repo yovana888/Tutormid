@@ -24,7 +24,7 @@ export default function Router() {
           <Route element={<Ads />} path="ads" />
           <Route element={<ProfileTeacher />} path="profileteacher" />
         </Route>
-        
+
         {/**Rutas Docente */}
         <Route
           path="/teacher/"
@@ -40,17 +40,18 @@ export default function Router() {
           <Route element={<Chat />} path="chat" />
           <Route element={<AdsT />} path="ads" />
         </Route>
-        
+
         {/**Rutas Alumno */}
         <Route
           path="/student/"
-          element={
+         /* element={
             user.rol == "estudiante" ? (
               <Dashboard />
             ) : (
               <Navigate to="/" />
             )
-          }
+          }*/
+          element={<Dashboard />}
         >
           <Route element={<PanelS />} path="" />
           <Route element={<Chat />} path="chat" />

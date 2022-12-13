@@ -7,7 +7,7 @@ export default function NavbarDashboard() {
     <Navbar className='nav  '>
     <span className='nav-logo'>Tutormid</span>
     <div className='nav-items'>
-      <Link to="/dashboardst">Panel de Control</Link>
+      <Link to="/teacher">Panel de Control</Link>
       <Link to="/ads">Profesores</Link>
       <Link to="/chat">Mis mensajes</Link>
     </div>

@@ -19,12 +19,12 @@ export const colors = {
     nameTeacherColor: "#0B1530",
     materiaColor: "#0B6AFF",
     cardDescriptionColor: "#7C8C9D",
-    priceCardColor: "#5F2ECC",
     lineColor:'#D4D6DB',
     borderInput:"#BCBABA",
     placeholderColor:"#B2BBCB",
     textMutedColor:"#CCCCCC",
     bgLightPurple:"#EEE5FF",
-    bgPurple2:"#A387EF"
+    bgPurple2:"#A387EF",
+    cancelColor: "#EF6565",
 }
 

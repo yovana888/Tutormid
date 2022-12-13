@@ -60,7 +60,7 @@ export const Price = styled.span `
     font-weight: 500;
     font-size: 15px;
     line-height: 22px;
-    color: ${colors.priceCardColor};
+    color: ${colors.darkPrimaryColor};
     padding-bottom: 0.7rem;
 `;
 

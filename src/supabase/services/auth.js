@@ -18,14 +18,17 @@ export const registerService = async (data) => {
 
     if (responseRegister.error) throw responseRegister.error;
 
-    return responseRegister.data;
+    return true;
 
   } catch (error) {
-    return error;
+    return {
+      status:500,
+      message:error
+    };
   }
 };
 
-export const registerGoogleService = async () => {
+export const sesionGoogleService = async () => {
   try {
     const response = await supabase.auth.signInWithOAuth({
       provider: "google",
@@ -33,17 +36,24 @@ export const registerGoogleService = async () => {
     if (response.error) throw response.error;
     return response;
   } catch (error) {
-    console.log(error);
     return error;
   }
 };
 
-export const login = async (email, password) => {
-  const response = await supabase.auth.signInWithPassword({
-    email,
-    password,
-  });
-  return response;
+export const login = async (data) => {
+  try {
+    const response = await supabase.auth.signInWithPassword({
+      email:data.email,
+      password:data.password,
+    });
+    if (response.error) throw response.error;
+    return response;
+  } catch (error) {
+    return {
+       status:500,
+       message:error
+    };
+  }
 };
 
 export const prueba = async () => {

@@ -1,29 +1,43 @@
 import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Navbar,NavLogo, NavItems, Notification, MenuSession, NavOptions, UserItems, NavToggle, Bar} from './Styles'
+import { Navbar,NavLogo, Notification, MenuSession, UserItems} from './Styles';
+import Dropdown from 'react-bootstrap/Dropdown';
+import { IoMdExit } from 'react-icons/io';
+
 
 export default function NavbarStd() {
 
   const [isOpen, setIsOpen] = useState(false)
   return (
-    <Navbar className=''>
-      <NavLogo className='' to="./"><img src="/LogoTutormid.svg" alt="" /></NavLogo>
-      <NavItems className={`${isOpen && "open"}`}>
-          <NavOptions to="/dashboardst">Panel de Control</NavOptions>
-          <NavOptions to="/ads">Profesores</NavOptions>
-          <NavOptions to="/chat">Mis mensajes</NavOptions>
-          <UserItems>
-            <div><Notification/></div>
-            <img src="/Ellipse 27.svg" alt="" />
-            <div><MenuSession/></div> 
-          </UserItems>            
-      </NavItems>
+    <Navbar className='nav-bar'>
+      <div className='space'>
+        <NavLogo className='nav-logo' to="/"><img src="/LogoTutormid.svg" alt="" /></NavLogo>
+        <div className={`nav-items ${isOpen && "open"}`}>
+            <Link className='nav-options' to="/dashboardst">Panel de Control</Link>
+            <Link className='nav-options' to="/ads">Profesores</Link>
+            <Link className='nav-options' to="/chat">Mis mensajes</Link>
+        </div>
+                  
 
-      <NavToggle className={`${isOpen && "open"}`} onClick={() => setIsOpen(!isOpen)} >
-        <Bar className=''>
-        </Bar>
-      </NavToggle>
+        <div className={`nav-toggle ${isOpen && "open"}`} onClick={() => setIsOpen(!isOpen)}>
+          <div className='bar'>
+          </div>
+        </div>
+      </div>
+      <UserItems className='user-items'>
+            <div ><Notification/></div>
+            <img src="/Ellipse 27.svg" alt="" />
+            <Dropdown>
+              <Dropdown.Toggle>
+                <MenuSession/>             
+              </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item><IoMdExit/> Salir</Dropdown.Item>
+      </Dropdown.Menu>
+            </Dropdown> 
+        </UserItems> 
     </Navbar>
   )
 }

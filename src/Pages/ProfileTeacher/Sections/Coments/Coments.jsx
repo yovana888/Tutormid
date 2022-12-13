@@ -1,9 +1,15 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { BodyComents } from './Styles';
 import { AiFillStar } from 'react-icons/ai';
 import Button from '../../../../Components/Elements/Button/Button';
 
 export default function Coments() {
+    // ------------------------------Acciones para Abrir Modal Add Commet------------------------------
+
+    const [showModalComentary, setshowModalComentary] = useState(false);
+    const toggleModalComentary = () => {
+      setshowModalComentary(!showModalComentary)
+    }
   return (
     <BodyComents>
       <h4>Comentarios</h4>

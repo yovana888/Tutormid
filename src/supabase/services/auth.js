@@ -54,7 +54,6 @@ export const login = async (data) => {
        message:error
     };
   }
- 
 };
 
 export const prueba = async () => {

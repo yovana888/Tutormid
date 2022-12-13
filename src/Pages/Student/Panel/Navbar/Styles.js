@@ -3,6 +3,7 @@ import {colors} from "../../../../Styles/colors"
 import { Link } from "react-router-dom";
 import { BsFillBellFill } from 'react-icons/bs';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
+import { GoPrimitiveDot } from 'react-icons/go';
 
 
 export const Navbar =styled.div`
@@ -189,6 +190,19 @@ export const Navbar =styled.div`
     transform: rotate(-45deg) translate(26px, 26px);
   }
 }
+
+.dot {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: red;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 12px;
+    right: 128px;
+    top: 28px;
+
+}
 `;
 
 export const NavLogo =styled(Link)`
@@ -226,12 +240,16 @@ export const Notification = styled(BsFillBellFill)`
   margin-right: 1.3rem;
   font-size: 20px;
 
+  
+
   &:hover{
     font-size: 23px;
   }
 
 
 `;
+
+export const Dot = styled(GoPrimitiveDot)``;
 
 export const MenuSession = styled(MdOutlineKeyboardArrowDown)`
   color: ${colors.textMutedColor};

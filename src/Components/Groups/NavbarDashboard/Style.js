@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {colors} from "../../../../Styles/colors"
+import {colors} from "../../../Styles/colors"
 import { Link } from "react-router-dom";
 import { BsFillBellFill } from 'react-icons/bs';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
@@ -16,6 +16,26 @@ export const Navbar =styled.div`
   box-sizing: border-box;
   padding: 0 2rem;
   font-family: 'Inter';
+  
+  .btn-primary {
+    background-color: none;
+
+    &:active {
+      background-color: transparent;
+    }
+  }
+  .dropdown-menu.item {
+    &:hover {
+      background: #B2ADCC;
+      border-radius: 5px;
+    }
+  }
+
+  a.dropdown-item {
+    &:hover {
+      background-color: transparent;
+    }
+  }
 
   .dropdown-toggle {
     background: ${colors.darkPurpleColor};
@@ -29,17 +49,13 @@ export const Navbar =styled.div`
     
 }
 
-.dropdown-menu {
+.dropdown-menu.show {
     margin-top: 10px;
     padding: 0;
     background: ${colors.darkPurpleColor};
     margin-left: 10px;
     border-color: ${colors.darkPurpleColor};
 
-    &:hover {
-      background: #B2ADCC;
-      border-radius: 20px;
-    }
 
     &:hover::after {
       background: #B2ADCC;
@@ -201,6 +217,7 @@ export const Navbar =styled.div`
     font-size: 12px;
     right: 128px;
     top: 28px;
+    color: #fff; 
 
 }
 `;
@@ -240,8 +257,6 @@ export const Notification = styled(BsFillBellFill)`
   margin-right: 1.3rem;
   font-size: 20px;
 
-  
-
   &:hover{
     font-size: 23px;
   }
@@ -249,13 +264,14 @@ export const Notification = styled(BsFillBellFill)`
 
 `;
 
-export const Dot = styled(GoPrimitiveDot)``;
 
 export const MenuSession = styled(MdOutlineKeyboardArrowDown)`
   color: ${colors.textMutedColor};
   font-size: 25px;
 
   &:hover{
-    font-size: 28px;
+    color: #fff;
   }
+
+
 `;

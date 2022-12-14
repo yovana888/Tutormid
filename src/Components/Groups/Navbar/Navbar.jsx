@@ -5,6 +5,8 @@ import NewLink from '../../Elements/NewLink/NewLink'
 import Button from '../../Elements/Button/Button';
 import ModalLogin from './Modals/ModalLogin';
 import ModalRegister from './Modals/ModalRegister';
+import ModalForgetPass from './Modals/ModalForgetPass';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/auth.context';
 
 import {
@@ -41,6 +43,13 @@ export default function Navbar() {
     setshowModalRegister(!showModalRegister)
   }
 
+  // ------------------------------Acciones para Abrir Modal Forget Password------------------------------
+
+  const [showModalPassword, setshowModalPassword] = useState(false);
+  const toggleModalPassword = () => {
+    setshowModalPassword(!showModalPassword)
+  }
+
   return (
     <>
       <NavbarContainer>
@@ -68,7 +77,7 @@ export default function Navbar() {
                     <NavDropdown title={
                       <NameUser>{user.full_name.split(' ')[0]} <img src={user.photo_url} /></NameUser>
                     } id="navbarScrollingDropdown">
-                      <NavDropdown.Item>Mi cuenta</NavDropdown.Item>
+                      <NavDropdown.Item><Link to={user.rol=="estudiante"?"/student":"/teacher"}  style={{ textDecoration: 'none' }}>Mi Cuenta</Link></NavDropdown.Item>
                       <NavDropdown.Item onClick={() => logout()}>Salir</NavDropdown.Item>
                     </NavDropdown>
                   </MenuItem>
@@ -90,12 +99,21 @@ export default function Navbar() {
       <ModalLogin
         isOpen={showModalLogin}
         toggle={toggleModalLogin}
+        toggleModalRegister={toggleModalRegister}
+        toggleModalPassword={toggleModalPassword}
       />
 
       {  /* ------------------------------ Modal Register  ------------------------------*/}
       <ModalRegister
-         isOpen={showModalRegister}
-        toggle={toggleModalRegister}
+          isOpen={showModalRegister}
+          toggle={toggleModalRegister}
+          toggleModalLogin={toggleModalLogin}
+      />
+
+{     /* ------------------------------ Modal Password  ------------------------------*/}
+      <ModalForgetPass
+          isOpen={showModalPassword}
+          toggle={toggleModalPassword}
       />
 
     </>

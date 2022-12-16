@@ -97,8 +97,8 @@ export default function PanelS() {
                   </div>
                   <div className='status'>
                   {
-                      solicitudes.map( (e) => (
-                        <p className={e.style}>{e.status}</p>
+                      solicitudes.map( (e, index) => (
+                        <p className={e.style} key={index}> {e.status}</p>
                       ))
                     }
                   </div>

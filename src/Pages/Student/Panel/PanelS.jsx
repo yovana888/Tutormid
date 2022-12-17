@@ -43,7 +43,9 @@ export default function PanelS() {
       <div className='container'>
         <div className='row '>
           <div className='col-md-5'>
-            <ProfileCard/>
+            <ProfileCard
+            banner
+            isCalendar={true}/>
             <Favoritos/>
           </div>
  {/* BIENVENID@ CARD--------------------------------------------- */}

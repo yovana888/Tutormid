@@ -16,6 +16,8 @@ export const Navbar =styled.div`
   box-sizing: border-box;
   padding: 0 2rem;
   font-family: 'Inter';
+
+  
   
   .btn-primary {
     background-color: none;
@@ -111,24 +113,13 @@ export const Navbar =styled.div`
     text-decoration: none;
     position: relative;
     opacity: 0.9;
-    padding: 2rem;
+    padding: 0 2rem;
 
     &:hover{
       color: ${colors.bgWhite};
       opacity: 1;
       font-size: 600;
       transition: all .5s; 
-    }
-
-    &::before{
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 2px;
-      background: #ffffff;
-      transition: all 0.45s;
     }
 
     &:hover::before {
@@ -223,10 +214,13 @@ export const Navbar =styled.div`
 `;
 
 export const NavLogo =styled(Link)`
-margin-top: -1rem;
+  align-items: center;
+  padding: 0;
+  
 img{
-  width: 10rem;
-}
+  width: fit-content;
+    
+  }
 
 @media (max-width: 700px) {
   display: none;

@@ -1,12 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 import NewModal from "../../Components/Groups/NewModal/NewModal";
-import TextField from "../../Components/Elements/TextField/TextField";
 import Form from 'react-bootstrap/Form';
-import { NewSelect } from "../../Components/Elements/NewSelect/NewSelect";
+import Button from "../../Components/Elements/Button/Button";
+// import { NewSelect } from "../../Components/Elements/NewSelect/NewSelect";
+import TabsReserva2 from './TabsReserva2';
 
 
 
 const TabsReserva1 = ({isOpen, toggle}) => {
+
+  const [showModalReserve2, setshowModalReserve2] = useState(false);
+
+  const toggleModalReserve2 = () => {
+    setshowModalReserve2(!showModalReserve2)
+  } 
+
   return (
 
     <NewModal isOpen={isOpen} toggle={toggle} title={"Planifica tu clase de Matemáticas con Lisa"}> 
@@ -32,24 +40,46 @@ const TabsReserva1 = ({isOpen, toggle}) => {
       height:'45px',
       width: '410px',
       borderRadius: '8px', 
+      fontSize: '16px'
       }}>
 
 
         <option> Secundaria </option>
-        <option> Secundaria </option>
-        <option> Secundaria </option>        
+        <option> Instituto </option>
+        <option> Universidad </option>        
     </Form.Select>
 
-    <NewSelect
+    {/* <NewSelect
             options='secundaria'
             placeholder="Seleccione su Rol"
             value='secundaria'
             name='rol'
-          />
+          /> */}
 
       
     </>
 
+
+    <div className="d-flex justify-content-start mt-3 "> 
+
+          <Button
+              text={'Cancelar'}
+              size="lg-size"
+              className="mt-4 mx-3"
+            />
+
+          <Button
+              text={'Siguiente'}
+              size="lg-size"
+              className="mt-4 mx-3"
+              type="submit"
+              onClick={() => {toggleModalReserve2() }}
+            />
+
+    </div>   
+
+     
+    <TabsReserva2 toggle={toggleModalReserve2 } isOpen={showModalReserve2}/>
     </NewModal>
   )
 }

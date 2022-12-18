@@ -5,6 +5,7 @@ import styled from 'styled-components';
 export const PanelBody = styled.div`
     background-color: ${colors.bgLight2};
     box-sizing: border-box;
+    height: 100vh;
 
 `;
 
@@ -66,8 +67,12 @@ h4{
     color: ${colors.textColor};
 }
 
+.fecha {
+    color: ${colors.dateColor};
+}
+
 .list{
-    display: flex;
+    /* display: flex; */
 }
 
 .name-list{

@@ -5,9 +5,9 @@ import ModalProfileStudents from '../../../Pages/Student/Modals/ProfileStudents/
 
 export default function ProfileCard(props) {
 
-  const [showModalProfile, setshowModalProfile] = useState(false);
+  const [showModalProfile, setShowModalProfile] = useState(false);
   const toggleModalProfile = () => {
-    setshowModalProfile(!showModalProfile)
+    setShowModalProfile(!showModalProfile)
   }
 	
 

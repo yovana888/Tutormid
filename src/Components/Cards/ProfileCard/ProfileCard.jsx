@@ -35,10 +35,16 @@ export default function ProfileCard(props) {
                 } 
                 <p className='number'>975635061</p>
             </div>
+
+           
         </div>
+
+        
         <ModalProfileStudents toggle={toggleModalProfile} isOpen={showModalProfile} />
         </>
     </Card>
+
+      
   )
 }
 

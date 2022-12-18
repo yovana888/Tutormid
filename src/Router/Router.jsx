@@ -12,6 +12,8 @@ import Chat from "../Pages/Student/Chat/Chat";
 import PanelT from "../Pages/Teacher/Panel/PanelT";
 import ResetPassword from "../Pages/ResetPassword/ResetPassword";
 import { AuthContext } from "../context/auth.context";
+import NotFounf from "../Pages/NotFound/ejemplos";
+ 
 
 export default function Router() {
   const { isLogin, user } = useContext(AuthContext);
@@ -55,10 +57,12 @@ export default function Router() {
         >
           <Route element={<PanelS />} path="" />
           <Route element={<Chat />} path="chat" />
+          <Route element={<Ads />} path="ads" />
         </Route>
 
         <Route element={<ResetPassword />} path="/reset" />
         <Route element={<NotFound />} path="*" />
+        <Route element={<NotFounf />} path="ejemplos" />
       </Routes>
     </BrowserRouter>
   );

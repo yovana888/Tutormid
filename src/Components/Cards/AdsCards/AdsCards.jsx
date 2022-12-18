@@ -14,7 +14,7 @@ export default function AdsCards() {
   return (
     <div className='container '>
           <AdsCardContent
-           img='./Ellipse 30.svg'
+           img='/Ellipse 30.svg'
            name='Lisa Sotelo Flores'
            materia='Matemáticas'
            description='Estudiante de ingeniería :) Con experiencia enseñando a estudiantes de colegio y/o preuniversitarios Clases virtuales de matemática (aritmética, álgebra, geometría, trigonometría)...'
@@ -24,7 +24,7 @@ export default function AdsCards() {
            
 
           <AdsCardContent
-           img='./Ellipse 31.svg'
+           img='/Ellipse 31.svg'
            name='Juan Soto Ramirez'
            materia='Matemáticas'
            description='Estudiante de ingeniería :) Con experiencia enseñando a estudiantes de colegio y/o preuniversitarios Clases virtuales de matemática (aritmética, álgebra, geometría, trigonometría)...'
@@ -33,7 +33,7 @@ export default function AdsCards() {
            price='$15.00 / 1 hora'/>
 
           <AdsCardContent
-           img='./Ellipse 32.svg'
+           img='/Ellipse 32.svg'
            name='Lorena Salas'
            materia='Matemáticas'
            description='Estudiante de ingeniería :) Con experiencia enseñando a estudiantes de colegio y/o preuniversitarios Clases virtuales de matemática (aritmética, álgebra, geometría, trigonometría)...'
@@ -42,7 +42,7 @@ export default function AdsCards() {
            price='$15.00 / 30 min'/>
 
           <AdsCardContent
-           img='./Ellipse 33.svg'
+           img='/Ellipse 33.svg'
            name='Javier Vera J.'
            materia='Matemáticas'
            description='Estudiante de ingeniería :) Con experiencia enseñando a estudiantes de colegio y/o preuniversitarios Clases virtuales de matemática (aritmética, álgebra, geometría, trigonometría)...'

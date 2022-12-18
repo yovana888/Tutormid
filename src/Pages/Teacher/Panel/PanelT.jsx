@@ -1,9 +1,18 @@
 import React from 'react'
+import {PanelBody} from './Style'
+import ProfileCard from '../../../Components/Cards/ProfileCard/ProfileCard'
 
 export default function PanelT() {
   return (
-    <div>
-      Panel Teacher
-    </div>
+    <PanelBody>
+      <div className='container'>
+        <div className='row '>
+          <div className='col-md-5'>
+            <ProfileCard isCalendar={true}/>
+            
+          </div>
+        </div>
+      </div>
+    </PanelBody>
   )
 }

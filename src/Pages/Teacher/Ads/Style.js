@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { colors } from "../../../Styles/colors";
 import { AiOutlineEdit } from 'react-icons/ai';
 import { FiEyeOff } from 'react-icons/fi';
+import { Button } from "react-bootstrap";
 
 
 export const AdsTeacher = styled.div`
@@ -72,14 +73,42 @@ export const Card = styled.div`
 `;
 
 export const Edit = styled(AiOutlineEdit)`
-    font-size: 40;
-    .svg {
-        width: 30px;
-    }
-    
+    font-size: 30px;
+
+    &:hover{
+        color: ${colors.primaryColor};
+     }
  
 `;
 
 export const Eye = styled(FiEyeOff)`
     font-size: 30px;
+    color: ${colors.primaryColor};
+
+    &:hover{
+        color: #fff;
+     }
+`;
+
+export const BtnEdit = styled(Button)`
+     background-color: ${colors.primaryColor};
+     border: 1px solid ${colors.primaryColor};
+     margin-right: 2rem;
+
+     &:hover{
+        background-color: #fff;
+        border: 1px solid ${colors.primaryColor};
+        color: ${colors.primaryColor};
+     }
+`;
+
+export const BtnView = styled(Button)`
+     background-color: #fff;
+     border: 1px solid ${colors.primaryColor};
+     margin-right: 2rem;
+
+     &:hover{
+        background-color: ${colors.primaryColor};
+        color: ${colors.bgWhite};
+     }
 `;

@@ -1,15 +1,22 @@
-import React, {useContext} from 'react'
-import { Outlet } from 'react-router-dom';
+import React, {useContext, useEffect} from 'react'
+import { Outlet, useNavigate } from 'react-router-dom';
 import NavbarDashboard from '../../Components/Groups/NavbarDashboard/NavbarDashboard';
 import { AuthContext } from '../../context/auth.context';
-import { Navigate } from "react-router-dom";
 
 export default function Dashboard() {
-  const { isLogin } = useContext(AuthContext);
-  if (!isLogin) {
-    return <Navigate to="/" />;
-  }
+  const { isLoginFunction } = useContext(AuthContext);
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+   if(!fetch()){
+    navigate('/');
+   }
+  }, [])
 
+  const fetch=async()=>{
+     await isLoginFunction();
+  }
+  
   return (
     <>
         <NavbarDashboard/>

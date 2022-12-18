@@ -47,7 +47,6 @@ export default function NotFounf() {
 
   return (
     <Container>
-      NotFound
       <Button text="Prueba" icon={<TiPlus />} /> <br />
       <Button text="Prueba" icon={<TiPlus />} color="outline" /> <br />
       <Button text="Prueba" icon={<TiPlus />} color="outline-blue" /><br />

@@ -14,7 +14,7 @@ export default function NavbarStd() {
   return (
     <Navbar className='nav-bar'>
       <div className='space'>
-        <NavLogo className='nav-logo' to="/"><img src="/LogoTutormid.svg" alt="" /></NavLogo>
+        <NavLogo to="/"><img src="/LogoTutormid.svg" alt="" /></NavLogo>
         <div className={`nav-items ${isOpen && "open"}`}>
             <Link className='nav-options' to="/student">Panel de Control</Link>
             <Link className='nav-options' to="/student/ads">Profesores</Link>
@@ -27,11 +27,7 @@ export default function NavbarStd() {
           </div>
         </div>
       </div>
-      <UserItems className='user-items'>
-        <div className='campana'><Notification/>
-          <span className='dot'></span>
-        </div>    
-
+      <UserItems className='user-items'>  
         <img src="/Ellipse 27.svg" alt="" />  
         
 {/*-----------DROPDOWN SALIR---------------- */}

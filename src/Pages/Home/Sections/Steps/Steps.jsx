@@ -52,7 +52,7 @@ export default function Steps() {
                   <CardStep 
                       title='4. Valora y Comparte' 
                       text='Comenta que te parecio la clase; asi mismo puedes recomendar al profesor a otras personas. '
-                      icon={<BsFillCalendarCheckFill/>}
+                      icon={<BsFillCalendarCheckFill />}
                       color='blue'
                   />
                 </Col>

@@ -31,7 +31,6 @@ export const getTypeStudents = async () => {
 export const getNiveles = async () => {
     try {
         const { error, data } = await supabase.from("nivel").select("*");
-        console.log(data, 'niveles')
         if (error) throw error;
         const newData = data.map(item=>({value:item.id, label:item.name}))
         return newData;
@@ -46,11 +45,9 @@ export const getNiveles = async () => {
 
 export const getAds = async () => {
     try {
-        const { error, data } = await supabase.from("ads").select("*");
-        console.log(data, 'niveles')
+        const { error, data } = await supabase.from("ads").select("*, users_rol(photo_url,about_me, full_name, score, comments), course(name)");
         if (error) throw error;
-        const newData = data.map(item=>({value:item.id, label:item.name}))
-        return newData;
+        return data;
     } catch (error) {
         return {
             status:500,

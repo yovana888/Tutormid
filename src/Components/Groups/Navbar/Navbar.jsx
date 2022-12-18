@@ -6,7 +6,7 @@ import Button from '../../Elements/Button/Button';
 import ModalLogin from './Modals/ModalLogin';
 import ModalRegister from './Modals/ModalRegister';
 import ModalForgetPass from './Modals/ModalForgetPass';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../context/auth.context';
 
 import {
@@ -23,7 +23,7 @@ import {
 export default function Navbar() {
   const {isLogin, user, logout} = useContext(AuthContext);
   const [click, setClick] = useState(false);
-
+  const navigate=useNavigate()
   const ChangeClick = () => {
     setClick(!click);
   }
@@ -50,6 +50,10 @@ export default function Navbar() {
     setshowModalPassword(!showModalPassword)
   }
 
+  
+  const goPanel = ( )=>{
+    navigate(user.rol=="estudiante"?"/student":"/teacher")
+  }
   return (
     <>
       <NavbarContainer>
@@ -77,7 +81,7 @@ export default function Navbar() {
                     <NavDropdown title={
                       <NameUser>{user.full_name.split(' ')[0]} <img src={user.photo_url} /></NameUser>
                     } id="navbarScrollingDropdown">
-                      <NavDropdown.Item><Link to={user.rol=="estudiante"?"/student":"/teacher"}  style={{ textDecoration: 'none' }}>Mi Cuenta</Link></NavDropdown.Item>
+                      <NavDropdown.Item onClick={()=> goPanel()}>Mi Cuenta</NavDropdown.Item>
                       <NavDropdown.Item onClick={() => logout()}>Salir</NavDropdown.Item>
                     </NavDropdown>
                   </MenuItem>

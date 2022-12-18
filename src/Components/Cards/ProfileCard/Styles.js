@@ -7,12 +7,10 @@ export const Card = styled.div`
 font-family: 'Inter';
 
 
-
 .wrapper-grid{
     display: grid;
     grid-template-columns: minmax(300px, 1fr);
     justify-content: center;
-    grid-gap: 2rem;
     margin: 2rem;
     
 }
@@ -52,6 +50,8 @@ img{
     
 }
 
+
+
 .name {
     font-weight: 600;
     font-size: 28px;
@@ -65,9 +65,13 @@ p {
     color: ${colors.textColor};
 }
 
+.email{
+    margin-bottom: 8px;
+}
+
 .number{
-    padding-top: 1.4rem;
-    padding-bottom: 3rem;
+    margin-bottom: 3rem;
+    padding: 0;
 }
 
 `;

@@ -8,7 +8,8 @@ export default function PanelT() {
       <div className='container'>
         <div className='row '>
           <div className='col-md-5'>
-            <ProfileCard isCalendar={true}/>
+            <ProfileCard isStudent={true}
+            />
             
           </div>
         </div>

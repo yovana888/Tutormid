@@ -10,28 +10,43 @@ export default function PanelS() {
 
   let solicitudes = [
     {
-      name: "Lisa Sotelo Quispe",
-      materia: "Matematica Financiera",
-      status: "Pendiente",
-      style: "pending"
+      fecha: 'Hoy',
+      teachers: [
+        {
+          name: "Lisa Sotelo Quispe",
+          materia: "Matematica Financiera",
+          status: "Pendiente",
+          style: "pending"
+        }
+      ] 
     },
     {
-      name: "Lisa Sotelo Quispe",
-      materia: "Matematica Financiera",
-      status: "Aceptado",
-      style: "acept"
+      fecha: '10-12-22',
+      teachers: [
+        {
+          name: "Lisa Sotelo Quispe",
+          materia: "Matematica Financiera",
+          status: "Aceptado",
+          style: "acept"
+        },
+        {
+          name: "Lisa Sotelo Quispe",
+          materia: "Matematica Financiera",
+          status: "Cancelado",
+          style: "cancel"
+        }
+      ]
     },
     {
-      name: "Lisa Sotelo Quispe",
-      materia: "Matematica Financiera",
-      status: "Cancelado",
-      style: "cancel"
-    },
-    {
-      name: "Lisa Sotelo Quispe",
-      materia: "Matematica Financiera",
-      status: "Rechazado",
-      style: "refused"
+      fecha: '10-10-22',
+      teachers: [
+        {
+          name: "Lisa Sotelo Quispe",
+          materia: "Matematica Financiera",
+          status: "Rechazado",
+          style: "refused"
+        }
+      ]
     }
   ]
 
@@ -44,8 +59,10 @@ export default function PanelS() {
         <div className='row '>
           <div className='col-md-5'>
             <ProfileCard
-            banner
-            isCalendar={true}/>
+            img='/Ellipse 27.svg'
+            name='Amelia Perez Rojas'
+            email='amelia@gmail.com'
+            isStudent={true}/>
             <Favoritos/>
           </div>
  {/* BIENVENID@ CARD--------------------------------------------- */}
@@ -80,30 +97,32 @@ export default function PanelS() {
               <>
                 <div className='full-box'>
                 <div className='list'>
-                  
 
-                  <div className='name-list'>
+                  {solicitudes.map( e => 
+                  (<>
+                    <div className='d-flex justify-content-between align-items-center'>
+                      <span className='fecha'>{e.fecha}</span> <Divider secondaryColor="grey" 
+                      ></Divider>
+                    </div>
                     {
-                      solicitudes.map( (e) => (
-                        <p>{">"} {e.name}</p>
+                      e.teachers.map( tch => (
+                      <ul className='list-unstyled d-flex justify-content-between'>
+                        <li>{ tch.name }</li> 
+                        <li>{ tch.materia }</li> 
+                        <li>
+                          <span className={ tch.style }>
+                            { tch.status }
+                          </span>
+                        </li> 
+                        <li></li>
+                      </ul>
                       ))
                     }
-                  </div>
+                    
+                  </>
+                  )
+                    )}
                   
-                  <div>
-                  {
-                      solicitudes.map( (e) => (
-                        <p>{e.materia}</p>
-                      ))
-                    }
-                  </div>
-                  <div className='status'>
-                  {
-                      solicitudes.map( (e) => (
-                        <p className={e.style}>{e.status}</p>
-                      ))
-                    }
-                  </div>
                 </div>
 
                 
@@ -120,4 +139,17 @@ export default function PanelS() {
     </PanelBody>
   
   )
+}
+
+
+function Divider(props) {
+  return (
+    <hr
+      style={{
+        backgroundColor: props.secondaryColor,
+        height: '1px',
+        width: '84%',
+      }}
+    />
+  );
 }

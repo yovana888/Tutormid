@@ -70,9 +70,16 @@ p {
     
 }
  .description{
-    margin: 20px 2.5rem 4rem 2.5rem;
+    margin: 20px 2.5rem 2rem 2.5rem;
     text-align:  start;
     font-size: 19px;
+ }
+
+ .more {
+    text-decoration: underline;
+    color: ${colors.materiaColor};
+    cursor: pointer;
+    margin: 10px;
  }
 
 `;

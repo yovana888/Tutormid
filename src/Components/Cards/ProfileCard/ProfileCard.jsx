@@ -24,7 +24,7 @@ export default function ProfileCard(props) {
                       <p className='number'><Phone/> {props.number}</p>
                       <p className='date'><Calendar/>  {props.date}</p>
                     </div>
-                    <p className='description'>{props.description}<br/><span>Ver Más</span>
+                    <p className='description'>{props.description}<br/><br /><span className='more'>Ver Más</span>
                     </p>
                     
                         </>

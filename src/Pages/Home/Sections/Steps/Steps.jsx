@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useState} from 'react'
 import { Container, ContainerImage } from './Style'
 import { Row, Col } from 'react-bootstrap';
 import Text from '../../../../Components/Elements/Text/Text';
 import CardStep from '../../../../Components/Cards/CardStep/CardStep';
 import { BsSearch, BsFillCalendarCheckFill,BsCameraReelsFill } from "react-icons/bs";
+import AddComent from '../../../../Pages/ProfileTeacher/Sections/Coments/Modals/AddCommet'
 
 export default function Steps() {
+
+  const [showModalComment, setShowModalComment] = useState(false);
+  const toggleModalComment = () => {
+    setShowModalComment (!showModalComment) 
+  }
+
+
   return (
     <Container>
       <Text name='Aprender nunca fue así de fácil' className='text-center' />
@@ -52,13 +60,15 @@ export default function Steps() {
                   <CardStep 
                       title='4. Valora y Comparte' 
                       text='Comenta que te parecio la clase; asi mismo puedes recomendar al profesor a otras personas. '
-                      icon={<BsFillCalendarCheckFill/>}
+                      icon={<BsFillCalendarCheckFill onClick={() => {toggleModalComment() }} />}
                       color='blue'
                   />
                 </Col>
             </Row>
         </Col>
       </Row>
+
+      <AddComent   toggle={toggleModalComment } isOpen={showModalComment}/> 
     </Container>
   )
 }

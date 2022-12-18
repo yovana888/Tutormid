@@ -93,14 +93,16 @@ export const Navbar =styled.div`
       position: absolute;
       top: 60px;
       display: flex;
+      justify-content: flex-start;
       flex-direction: column;
       background: ${colors.darkPurpleColor};
       left: 0;
       width: 100%;
-      height: 50%;
+      height: 100vh;
       z-index: 1;
       transform: translateX(-100%);
       transition: all .45s;
+      padding-left:3.3rem;
     }
   }
 
@@ -144,7 +146,7 @@ export const Navbar =styled.div`
     @media (max-width: 700px) {
     display: flex;
     width: 50px;
-    height: 50px;
+    height: 100%;
     align-items: center;
     justify-content: center;
     cursor: pointer;

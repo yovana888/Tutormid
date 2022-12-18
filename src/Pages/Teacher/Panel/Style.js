@@ -2,24 +2,32 @@ import {colors} from '../../../Styles/colors'
 import styled from 'styled-components';
 import { BsFillCheckCircleFill } from 'react-icons/bs';
 import { HiOutlineChat } from 'react-icons/hi';
+import { BsCalendar2Week } from 'react-icons/bs';
 
 
 export const PanelBody = styled.div`
     background-color: ${colors.bgLight2};
     box-sizing: border-box;
     height: 100%;
-    padding: 5.6rem 4.5rem 12rem 4.5rem;
     margin: 0;
     font-family: 'Inter'; 
+    /* padding-bottom: 50px; */
 
+    @media (min-width: 992px) {
+        padding: 5.6rem 4.5rem 12rem 4.5rem;
+    }
+
+    @media (max-width: 991px) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
 `;
 
 export const Estudios = styled.div`
     font-family: 'Inter';   
-    width: 26.9rem;
+    /* width: 26.9rem; */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    overflow: hidden;
     background-color: ${colors.bgWhite};
     margin: 2rem 0 0 0;
     padding: 2rem;
@@ -46,10 +54,9 @@ export const Estudios = styled.div`
 export const Welcome = styled.div`
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    overflow: hidden;
+    overflow: auto;
     background-color: ${colors.bgWhite};
     padding: 2rem;
-
 h4{
     color: ${colors.darkPrimaryColor};
     padding-bottom: 1.4rem;
@@ -99,10 +106,11 @@ h4{
 export const Solicitudes = styled.div`
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    overflow: hidden;
+    /* overflow-x: scroll; */
     background-color: ${colors.bgWhite};
-    padding: 2rem;
+    /* padding: 2rem; */
     margin-top: 3.5rem;
+    text-align: left;
     
 h4{
     font-weight: 400;
@@ -118,6 +126,11 @@ h4{
 
 .full-box{
     color: ${colors.textColor};
+    padding: 2rem;
+}
+
+.title-studies {
+    padding: 20px 20px 0 20px;
 }
 
 .fecha {
@@ -156,6 +169,13 @@ export const Check = styled(BsFillCheckCircleFill)`
 `;
 
 export const Chat = styled(HiOutlineChat)`
+    color: ${colors.darkPrimaryColor};   
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+`;
+
+export const Calendar = styled(BsCalendar2Week)`
     color: ${colors.darkPrimaryColor};   
     width: 24px;
     height: 24px;

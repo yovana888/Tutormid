@@ -58,7 +58,7 @@ export default function Navbar() {
     <>
       <NavbarContainer>
         <NavbarWrapper>
-          <IconLogo> <img src='./src/assets/logo.svg' width={140} alt="logo" /></IconLogo>
+          <IconLogo> <img src='/Logo.svg' width={140} alt="logo" /></IconLogo>
           <IconLogoMobile onClick={() => ChangeClick()}>
             {
               click ? <FaTimes /> : <FaBars />

@@ -11,11 +11,11 @@ import { useNavigate } from "react-router-dom";
 
 export default function AdsCards({item}) {
   const navigate=useNavigate()
-  const goDocenteProfile=(idDocente)=>{
-  navigate('/profileteacher/'+idDocente)
+  const goDocenteProfile=(idDocente, idAds)=>{
+  navigate('/profileteacher/'+idDocente+'/'+idAds)
 }
   return (
-    <BodyCard className='card-content row'  onClick={()=>{goDocenteProfile(item.users_rol.id)}}>
+    <BodyCard className='card-content row'  onClick={()=>{goDocenteProfile(item.users_rol.id, item.id)}}>
 
     <section className='col-md-2 col-sm-12'>
           <img className='img-fluid' style={{borderRadius:'50%'}} src={item.users_rol.photo_url} alt="" />

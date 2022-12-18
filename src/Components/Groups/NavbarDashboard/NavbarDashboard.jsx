@@ -10,7 +10,6 @@ export default function NavbarStd() {
 
   const [isOpen, setIsOpen] = useState(false);
   const { user } = useContext(AuthContext);
-  console.log(user)
   const [menu, setMenu] = useState(user.rol=="estudiante" ? MenuStudent : MenuTeacher)
 
   return (

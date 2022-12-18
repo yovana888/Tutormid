@@ -23,7 +23,7 @@ export default function Router() {
         <Route element={<Main/>} path="/">
           <Route element={<Home/>} path="" />
           <Route element={<Ads/>} path="ads" />
-          <Route element={<ProfileTeacher/>} path="profileteacher/:idDocente" />
+          <Route element={<ProfileTeacher/>} path="profileteacher/:idDocente/:idAds" />
         </Route>
 
         {/**Rutas Profesor */}

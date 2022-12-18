@@ -61,3 +61,22 @@ export const getAds = async (size = 5, filters) => {
     };
   }
 };
+
+export const getProfileTeacher = async(idTeacher, idAds) =>{
+  try {
+    const { error, data } = await supabase
+      .from("ads")
+      .select(
+        "*, users_rol(*), course(name), nivel(name), type_study(name)"
+      )
+      .eq('id', idAds)
+      .eq('uid_teacher',idTeacher);
+    if (error) throw error;
+    return data;
+  } catch (error) {
+    return {
+      status: 500,
+      message: error,
+    };
+  }
+}

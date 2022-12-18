@@ -30,7 +30,7 @@ margin-bottom: 3rem;
 p {
     font-weight: 400;
     color: ${colors.cardDescriptionColor};
-    font-size: 22px;
+    font-size: 19px;
     margin-top: 1rem;
 }
 `;
@@ -48,7 +48,7 @@ export const Estudios = styled.div `
 p {
     font-weight: 400;
     color: ${colors.cardDescriptionColor};
-    font-size: 22px;
+    font-size: 19px;
     margin-top: 1rem;
 }  
 `;

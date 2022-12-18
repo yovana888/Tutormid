@@ -57,6 +57,6 @@ export const AcercaBody = styled.div `
 .description {
     font-weight: 400;
     color: ${colors.cardDescriptionColor};
-    font-size: 22px;
+    font-size: 19px;
 }
 `;

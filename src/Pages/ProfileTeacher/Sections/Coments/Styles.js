@@ -36,7 +36,7 @@ h4 {
 
 .text {
     color: ${colors.cardDescriptionColor};
-    font-size: 20px;
+    font-size: 19px;
 }
 
 

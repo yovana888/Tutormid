@@ -3,19 +3,20 @@ import { AcercaBody } from './Styles';
 import { VscBook } from 'react-icons/vsc';
 import { IconContext } from 'react-icons';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
-
-export default function AcercaDe() {
+import { AiOutlineBook } from "react-icons/ai";
+export default function AcercaDe({data}) {
   return (
     <AcercaBody className='container-fluid'>
         <div className='detailSection row'>
             <div className='col-12 col-md-4 col-lg-3 text-center'>
-                <img className='image' src="./Ellipse 30.svg" alt="" />
+                <img className='image' src={data.users_rol.photo_url} alt="" />
             </div>
             <div className='details col-12 col-md-8 col-lg-9'>
                 <IconContext.Provider value={{size: '1.3rem', style:{paddingBottom: "4px" } }}>
-                <h4 className='name'>Lisa Sotelo Flores</h4>
-                <h5 className='materia'><VscBook/> Matemáticas  General </h5>
-                <h5 className='level'><BsFillPersonLinesFill/> Nivel: Primara, Secundaria</h5>
+                <h4 className='name'>{data.users_rol.full_name}</h4>
+                <h5 className='materia'><VscBook/> {data.course.name}</h5>
+                <h5 className='level'><BsFillPersonLinesFill/> Nivel: {data.nivel.name}</h5>
+                <h5 className='text-muted'><AiOutlineBook/> Dirigido a : {data.type_study.name}</h5>
                 </IconContext.Provider>
             </div>
         </div>
@@ -25,8 +26,6 @@ export default function AcercaDe() {
 
             Reserva una clase de prueba conmigo y podrás ver cómo se ve una clase mía y cuánto te ayudaría a alcanzar tus objetivos. 
             <br/>
-            <br/>
-            <span><a href="">Ver Menos</a></span>
             </p>
         </div>
     </AcercaBody>

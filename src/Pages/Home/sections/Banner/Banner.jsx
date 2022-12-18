@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import NewInputGroup from '../../../../Components/Groups/InputGroup/InputGroup';
 import Text from '../../../../Components/Elements/Text/Text';
+
 export default function Banner() {
   return (
     <>

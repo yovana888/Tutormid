@@ -10,13 +10,12 @@ export default function NavbarStd() {
 
   const [isOpen, setIsOpen] = useState(false);
   const { user } = useContext(AuthContext);
-  console.log(user)
   const [menu, setMenu] = useState(user.rol=="estudiante" ? MenuStudent : MenuTeacher)
 
   return (
     <Navbar className='nav-bar'>
       <div className='space'>
-        <NavLogo to="/"><img src="/LogoTutormid.svg" alt="" /></NavLogo>
+        <NavLogo to="/"><img src="/LogoTutormid.svg" alt="" style={{marginTop:'-23px', width:'130px'}}/></NavLogo>
         <div className={`nav-items ${isOpen && "open"}`}>
             {
               menu.map(item=>(

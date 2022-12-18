@@ -36,7 +36,7 @@ const styles = {
 };
 
 
-const AddComent = ({isOpen, toggle}) => {
+const AddComent = ({isOpen, toggle, idTeacher, nameTeacher}) => {
 
   const [currentValue, setCurrentValue] = useState(0);
   const [hoverValue, setHoverValue] = useState(undefined);
@@ -57,7 +57,7 @@ const AddComent = ({isOpen, toggle}) => {
 
 
   return (
-    <NewModal isOpen={isOpen} toggle={toggle} title={"Valoración para @Name"}> 
+    <NewModal isOpen={isOpen} toggle={toggle} title={"Valoración para " + nameTeacher}> 
     
     <>
   
@@ -84,25 +84,23 @@ const AddComent = ({isOpen, toggle}) => {
     <textarea placeholder='Describe tu reseña sobre el profesor....' 
           style={styles.textarea}
           className='mt-4'
-    
     />
-          
-    
-    <div className="d-flex justify-content-around "> 
 
-            <Button
-                text={'Publicar'}
-                size="lg-size"
-                className="mt-4 mx-2 "
-                type="submit"
-              />
+    <div className="d-flex justify-content-around "> 
 
             <Button
                 text={'Cancelar'}
                 size="lg-size"
-                className="mt-4 mx-2"
+                className="mt-2 mx-2"
                 type="submit"
-                
+                color='outline'
+              />
+
+            <Button
+                text={'Publicar'}
+                size="lg-size"
+                className="mt-2 mx-2 "
+                type="submit"
               />
       </div>   
 

@@ -86,7 +86,7 @@ export default function ProfileTeacher() {
                 </Estudios>
 
                 <ComentsSection className="">
-                  <Coments />
+                  <Coments idDocente={idDocente}/>
                 </ComentsSection>
               </div>
             </div>

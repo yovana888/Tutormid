@@ -80,3 +80,22 @@ export const getProfileTeacher = async(idTeacher, idAds) =>{
     };
   }
 }
+
+export const getCommentsByTeacher = async(idTeacher) =>{
+  try {
+    const { error, data } = await supabase
+      .from("review")
+      .select(
+        "*, users_rol!uid_student(*)"
+      )
+      .eq('uid_teacher',idTeacher);
+    if (error) throw error;
+    return data;
+  } catch (error) {
+    return {
+      status: 500,
+      message: error,
+    };
+  }
+}
+

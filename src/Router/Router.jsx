@@ -55,6 +55,7 @@ export default function Router() {
         >
           <Route element={<PanelS />} path="" />
           <Route element={<Chat />} path="chat" />
+          <Route element={<Ads />} path="ads" />
         </Route>
 
         <Route element={<ResetPassword />} path="/reset" />

@@ -10,14 +10,16 @@ import { getAds } from "../../supabase/services/ads";
 export default function Ads() {
   const [isLoad, setIsLoad] = useState(false);
   const [listAds, setListAds] = useState([]);
+  const [sizeActual, setSizeActual] = useState(5);
+
   useEffect(() => {
-    fetchData();
+    fetchData(5);
   }, []);
 
-  const fetchData = async () => {
+  const fetchData = async (size) => {
     try {
       setIsLoad(true);
-      const res = await getAds();
+      const res = await getAds(size);
       if (res.status == 500) throw res.message;
       setListAds(res);
     } catch (error) {
@@ -30,18 +32,23 @@ export default function Ads() {
   };
 
   const goDocenteProfile=(idDocente)=>{
+      console.log(idDocente)
+  }
 
+  const loadMore=()=>{
+    const size = sizeActual + 5;
+    setSizeActual(size)
+    fetchData(size);
   }
 
   return (
     <BodyAds>
       <Filter />
       <div className="container body">
-        <h3 className="results">Se encontrarón {listAds.length} profesores</h3>
-        {isLoad && <><Loader /><br /><br /></>}
+        <h3 className="results">Profesores Disponibles</h3>
 
         {listAds.length > 0 &&
-          listAds.map((item, index) => <AdsCards key={index} item={item} onClick={goDocenteProfile(item.users_rol.id)} />)}
+          listAds.map((item, index) => <AdsCards key={index} item={item} onClick={()=>goDocenteProfile(item.users_rol.id)} />)}
         {listAds.length > 0 && (
           <div className="btn-ads">
             <Button
@@ -50,9 +57,12 @@ export default function Ads() {
               type="button"
               color="outline"
               className=""
+              onClick={()=>loadMore()}
             />
           </div>
         )}
+
+        {isLoad && <><Loader /><br /><br /></>}
       </div>
     </BodyAds>
   );

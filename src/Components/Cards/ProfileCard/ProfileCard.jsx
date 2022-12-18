@@ -18,7 +18,7 @@ export default function ProfileCard(props) {
             <img src={props.img} alt="" className="profile-img" />
             <div className='content-card'>
               <h1 className='name'><FiEdit onClick={() => {toggleModalProfile() }} color='#0B6AFF' size="19"/> {props.name}</h1>
-                  
+
                   {(props.isStudent) ? 
                     <>
                     <p className='email'>{props.email}</p>

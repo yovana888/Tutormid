@@ -43,9 +43,9 @@ export const getNiveles = async () => {
 };
 
 
-export const getAds = async () => {
+export const getAds = async (size=5) => {
     try {
-        const { error, data } = await supabase.from("ads").select("*, users_rol(photo_url,about_me, full_name, score, comments, id), course(name)");
+        const { error, data } = await supabase.from("ads").select("*, users_rol(photo_url,about_me, full_name, score, comments, id), course(name)").range(1, size);
         if (error) throw error;
         return data;
     } catch (error) {
@@ -57,3 +57,10 @@ export const getAds = async () => {
 };
 
 
+export const getPagination = (page, size) => {
+    const limit = size ? +size : 3;
+    const from = page ? page * limit : 0;
+    const to = page ? from + size : size;
+  
+    return { from, to };
+};

@@ -8,14 +8,16 @@ export default function Dashboard() {
   const navigate = useNavigate();
   
   useEffect(() => {
-   if(!fetch()){
-    navigate('/');
-   }
+    fetch()
   }, [])
 
-  const fetch=async()=>{
-     await isLoginFunction();
-  }
+  const fetch=async() => {
+    const res = await isLoginFunction();
+    if(!res){
+      navigate('/');
+     }
+  };
+  
   
   return (
     <>

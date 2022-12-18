@@ -5,6 +5,7 @@ import TextField from "../../Components/Elements/TextField/TextField";
 import { TfiEmail } from "react-icons/tfi";
 import { TiPlus } from "react-icons/ti";
 import { NewSelect }  from "../../Components/Elements/NewSelect/NewSelect";
+import DropdownPrice from "../../Components/Elements/DropdownPrice/DropdownPrice";
 
 export default function NotFounf() {
   /**option para el select ejemplo */
@@ -46,8 +47,7 @@ export default function NotFounf() {
   }
 
   return (
-    <Container>
-      NotFound
+    <>
       <Button text="Prueba" icon={<TiPlus />} /> <br />
       <Button text="Prueba" icon={<TiPlus />} color="outline" /> <br />
       <Button text="Prueba" icon={<TiPlus />} color="outline-blue" /><br />
@@ -55,6 +55,7 @@ export default function NotFounf() {
       <Button text="Btn sm" icon={<TiPlus />} color="outline-blue" size="small-size"/><br />
       <Button text="Btn Large 100%" size="lg-size" /> <br />
 
+      <DropdownPrice></DropdownPrice><br />
 
       <ContainerInline>
         <Button text="Prueba" color="info" icon={<TiPlus />} />
@@ -115,6 +116,6 @@ export default function NotFounf() {
         />
 
       </Container50>
-    </Container>
+    </>
   );
 }

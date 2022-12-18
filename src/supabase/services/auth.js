@@ -54,10 +54,4 @@ export const login = async (data) => {
        message:error
     };
   }
- 
-};
-
-export const prueba = async () => {
-  const data = await supabase.from("course").select("*, course_category(name)");
-  console.log(data.data, "cursos");
 };

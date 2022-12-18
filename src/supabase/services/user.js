@@ -18,7 +18,8 @@ export const setProfileByEmailService = async (data, rol, fullname) => {
         email: data.email,
         about_me: "",
         studies: [],
-        likes: [],
+        score: 0,
+        comments:0
       });
     }
   } catch (error) {
@@ -46,7 +47,8 @@ export const setProfileByGoogleService = async (rol) => {
           email: metadata.email,
           about_me: "",
           studies: [],
-          likes: [],
+          score: 0,
+          comments:0
         });
         if (response.error) throw response.error;
         return true;

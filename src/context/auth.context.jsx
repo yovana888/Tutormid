@@ -56,6 +56,11 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const isLoginFunction = async () => {
+    const { error, data } = await supabase.auth.getSession();
+    return data.session===null ? false : true ;
+  }
+
   const logout = async () => {
     try {
       const { error } = await supabase.auth.signOut();
@@ -79,7 +84,7 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ isLogin, setIsLogin, user, setUser, logout, fetchUser }}
+      value={{ isLogin, setIsLogin, user, setUser, logout, fetchUser, isLoginFunction }}
     >
       {children}
     </AuthContext.Provider>

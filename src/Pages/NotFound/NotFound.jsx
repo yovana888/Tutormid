@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "../../Components/Elements/Button/Button";
 import { Container, Title } from "./Style";
 import { Link } from "react-router-dom";
+
 export default function NotFounf() {
+  
   return (
     <Container>
       <Title>Miauuu!, página no encontrada...</Title>

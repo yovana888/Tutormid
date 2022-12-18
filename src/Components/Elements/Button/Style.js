@@ -1,4 +1,3 @@
-import Button from 'react-bootstrap/Button';
 import { colors } from '../../../Styles/colors';
 import styled from "styled-components";
 
@@ -61,6 +60,18 @@ export const ButtonElement = styled.button`
     &.lg-size {
         padding: 10px 20px;
         width:100%;
+    }
+
+    &.adst-size {
+        padding: 22px 20px;
+        width:100%;
+    }
+
+    &.mini-size {
+        height: 68px;
+        width: 68px;
+        padding-left: 0;
+
     }
     /* fin tamaños */
 

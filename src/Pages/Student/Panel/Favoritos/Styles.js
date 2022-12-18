@@ -11,7 +11,11 @@ export const FavBody = styled.div`
     grid-template-columns: minmax(300px, 1fr);
     justify-content: center;
     grid-gap: 2rem;
-    margin: 2rem;
+    margin-top: 2rem;
+
+    @media (max-width: 991px) {
+        margin: 2rem 0;
+    }
 
 .contenedor {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -25,7 +29,7 @@ export const FavBody = styled.div`
 .title{
     text-align: start;
     font-weight: 400;
-    padding: 2.1rem 2.6rem;
+    padding: 1rem 2.6rem;
     color: ${colors.darkPrimaryColor};
 }
 

@@ -8,7 +8,7 @@ import {BsCalendar} from 'react-icons/bs';
 export const Card = styled.div`
 font-family: 'Inter';
 box-sizing: border-box;
-width: 26.9rem;
+/* width: 26.9rem; */
 
 
 .wrapper-grid{

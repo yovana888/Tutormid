@@ -5,7 +5,8 @@ import styled from 'styled-components';
 export const PanelBody = styled.div`
     background-color: ${colors.bgLight2};
     box-sizing: border-box;
-    height: 100vh;
+    padding-top: 3rem;
+    
 
 `;
 
@@ -15,8 +16,8 @@ export const Welcome = styled.div`
     box-sizing: border-box;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
-    margin: 2rem 0;
-    padding: 2.3rem 1.3rem ;
+    margin-bottom: 2rem;
+    padding: 2.3rem 1.3rem;
 
 h4{
     font-weight: 400;

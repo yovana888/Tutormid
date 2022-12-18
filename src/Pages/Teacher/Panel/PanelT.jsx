@@ -1,10 +1,9 @@
 import React, {useState} from 'react'
-import {PanelBody, Estudios, Check, Welcome, Chat,Solicitudes} from './Style'
+import {PanelBody, Estudios, Check, Welcome, Chat,Solicitudes, Calendar} from './Style'
 import ProfileCard from '../../../Components/Cards/ProfileCard/ProfileCard';
 
 
 export default function PanelT() {
-
   const [showModalComentary, setshowModalComentary] = useState(false);
   const toggleModalComentary = () => {
     setshowModalComentary(!showModalComentary)
@@ -57,32 +56,34 @@ export default function PanelT() {
   return (
     <PanelBody>
       <div className='container-fluid'>
-        <div className='row content'>
-          <div className='col-md-5 h-100'>
-              <ProfileCard 
-                  img='/Ellipse 38.svg'
-                  name='Raul Perez Rojas'
-                  email='raulperez@gmail.com'
-                  number='975635061'
-                  date='20-11-1993'
-                  description='Docente especializado en el Área de Aritmética, Algebra y Razonamiento Matemático Nivel Secundario y Pre Universitario con amplia trayectoria...'
-                  isStudent={false}
-              />
-              <Estudios >
-                <h4>Mis Estudios</h4>
-                <div className='info-studies'>
-                  <span><Check/></span>
+        <div className='row'>
+          <div className='col-12 col-md-5'>
+                <ProfileCard 
+                    img='/Ellipse 38.svg'
+                    name='Raul Perez Rojas'
+                    email='raulperez@gmail.com'
+                    number='975635061'
+                    date='20-11-1993'
+                    description='Docente especializado en el Área de Aritmética, Algebra y Razonamiento Matemático Nivel Secundario y Pre Universitario con amplia trayectoria...'
+                    isStudent={false}
+                />
+                <Estudios className='mb-5'>
                   <div>
-                    <p>Titulado en Docencia Universitaria <br/> <span className='uni'>Universidad de Lima</span> </p>
+                    <h4>Mis Estudios</h4>
+                    <div className='info-studies'>
+                      <span><Check/></span>
+                      <div>
+                        <p>Titulado en Docencia Universitaria <br/> <span className='uni'>Universidad de Lima</span> </p>
+                      </div>
+                    </div>
+                    <div className='info-studies'>
+                      <span><Check/></span>
+                      <p>Titulado en Docencia Universitaria <br/> <span className='uni'>Universidad de Lima </span> </p>
+                    </div>
                   </div>
-                </div>
-                <div className='info-studies'>
-                  <span><Check/></span>
-                  <p>Titulado en Docencia Universitaria <br/> <span className='uni'>Universidad de Lima </span> </p>
-                </div>
-              </Estudios>
-          </div>
-          <div className='col-md-7'>               
+                </Estudios>
+            </div>
+          <div className='col-12 col-md-7 '>               
             <Welcome>
                <h4>👋  Bienvenid@ Raul</h4>
                <div className='list-class'>
@@ -108,7 +109,7 @@ export default function PanelT() {
             </Welcome> 
             
             <Solicitudes>
-              <h4>
+              <h4 className='title-studies'>
               Mis solicitudes de clases
               </h4>
               {!solicitudes.length ? <>
@@ -138,7 +139,7 @@ export default function PanelT() {
                             { tch.status }
                           </span>
                         </li> 
-                        <li></li>
+                        <li><Calendar/></li>
                       </ul>
                       ))
                     }
@@ -164,8 +165,6 @@ export default function PanelT() {
           </div>                 
         </div>
       </div>
-
-      <button onClick={() => {toggleModalComentary() }}> Modal Teacher </button>
 
       
 

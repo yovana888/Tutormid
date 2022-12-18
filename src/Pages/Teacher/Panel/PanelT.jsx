@@ -119,15 +119,15 @@ export default function PanelT() {
                 <div className='full-box'>
                 <div className='list'>
 
-                  {solicitudes.map( e => 
+                  {solicitudes.map( (e, index) => 
                   (<>
-                    <div className='d-flex justify-content-between align-items-center'>
+                    <div className='d-flex justify-content-between align-items-center' key={index}>
                       <span className='fecha'>{e.fecha}</span> <Divider secondaryColor="grey" 
                       ></Divider>
                     </div>
                     {
-                      e.teachers.map( tch => (
-                      <ul className='list-unstyled d-flex justify-content-between'>
+                      e.teachers.map( (tch, index) => (
+                      <ul className='list-unstyled d-flex justify-content-between' key={index}>
                         <li>{ tch.name }</li> 
                         <li>{ tch.materia }</li> 
                         <li>

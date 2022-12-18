@@ -3,8 +3,11 @@ import { ProfileTbody, Metodo, Horario, Estudios,ComentsSection } from './Styles
 import AcercaDe from './Sections/AcercaDe/AcercaDe'
 import VideoCard from '../../Components/Cards/VideoCard/VideoCard'
 import Coments from './Sections/Coments/Coments'
+import { useParams } from 'react-router-dom';
 
 export default function ProfileTeacher() {
+  const { idDocente } = useParams();
+  console.log(idDocente)
   return (
     <ProfileTbody>
       <div className='container'>

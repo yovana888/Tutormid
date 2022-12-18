@@ -57,11 +57,8 @@ export const AuthProvider = ({ children }) => {
   };
 
   const isLoginFunction = async () => {
-    const { error } = await supabase.auth.getSession();
-    if (error) {
-       return false;
-    }
-    return true;
+    const { error, data } = await supabase.auth.getSession();
+    return data ? true : false ;
   }
 
   const logout = async () => {

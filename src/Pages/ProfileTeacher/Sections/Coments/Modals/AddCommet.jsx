@@ -93,14 +93,14 @@ const AddComent = ({isOpen, toggle}) => {
             <Button
                 text={'Publicar'}
                 size="lg-size"
-                className="mt-4 mx-2 "
+                className="mt-2 mx-2 "
                 type="submit"
               />
 
             <Button
                 text={'Cancelar'}
                 size="lg-size"
-                className="mt-4 mx-2"
+                className="mt-2 mx-2"
                 type="submit"
                 
               />

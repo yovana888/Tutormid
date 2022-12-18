@@ -1,10 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {PanelBody, Estudios, Check, Welcome, Chat,Solicitudes} from './Style'
 import ProfileCard from '../../../Components/Cards/ProfileCard/ProfileCard'
+import TabsTeacher from '../../../Pages/Teacher/TabsTeacher/TabsTeacher'
 
 
 
 export default function PanelT() {
+
+  const [showModalComentary, setshowModalComentary] = useState(false);
+  const toggleModalComentary = () => {
+    setshowModalComentary(!showModalComentary)
+  } 
+  
 
   let solicitudes = [
     {
@@ -145,17 +152,29 @@ export default function PanelT() {
                 </div>
 
                 
+
+                
               </div>
               </>
               }
               
-
+              
               
             </Solicitudes>
+
+            
           </div>                 
         </div>
       </div>
+
+      <button onClick={() => {toggleModalComentary() }}> Modal Teacher </button>
+
+      <TabsTeacher toggle={toggleModalComentary } isOpen={showModalComentary}/> 
+
+
     </PanelBody>
+
+
   )
 }
 

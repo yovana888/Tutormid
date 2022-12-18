@@ -11,13 +11,9 @@ import PanelS from "../Pages/Student/Panel/PanelS";
 import Chat from "../Pages/Student/Chat/Chat";
 import PanelT from "../Pages/Teacher/Panel/PanelT";
 import ResetPassword from "../Pages/ResetPassword/ResetPassword";
-import { AuthContext } from "../context/auth.context";
 import NotFounf from "../Pages/NotFound/ejemplos";
- 
 
 export default function Router() {
-  const { isLogin, user } = useContext(AuthContext);
-  console.log(user,isLogin,'veamos')
   return (
     <BrowserRouter>
       <Routes>
@@ -27,16 +23,10 @@ export default function Router() {
           <Route element={<ProfileTeacher />} path="profileteacher" />
         </Route>
 
-        {/**Rutas Docente */}
+        {/**Rutas Profesor */}
         <Route
           path="/teacher/"
-          element={
-             user.rol == "docente" ? (
-              <Dashboard />
-            ) : (
-              <Navigate to="/" />
-            )
-          }
+          element={ <Dashboard />}
         >
           <Route element={<PanelT />} path="" />
           <Route element={<Chat />} path="chat" />
@@ -46,13 +36,6 @@ export default function Router() {
         {/**Rutas Alumno */}
         <Route
           path="/student/"
-         /* element={
-            user.rol == "estudiante" ? (
-              <Dashboard />
-            ) : (
-              <Navigate to="/" />
-            )
-          }*/
           element={<Dashboard />}
         >
           <Route element={<PanelS />} path="" />

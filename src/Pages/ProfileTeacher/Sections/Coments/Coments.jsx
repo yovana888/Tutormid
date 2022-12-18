@@ -43,12 +43,11 @@ export default function Coments() {
 function ComentContent(props) {
   return (
     <div className='section'>
-      
+
         <div className='image'>
           <img src={props.img}  alt="" />
         </div>
 
-        
           <div className='content '>
             <div className='nameStar'>
               <span className='name'>{props.name}</span>
@@ -63,9 +62,6 @@ function ComentContent(props) {
               <p>{props.text}</p>
             </div>
           </div>
-        
-          
-        
     </div>
   )
 }

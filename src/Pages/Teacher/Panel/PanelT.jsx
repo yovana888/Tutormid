@@ -10,7 +10,7 @@ export default function PanelT() {
           <div className='col-md-5'>
             <ProfileCard isStudent={true}
             />
-            
+            svgadgaega
           </div>
         </div>
       </div>

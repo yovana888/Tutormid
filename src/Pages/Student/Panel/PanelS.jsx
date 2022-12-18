@@ -82,23 +82,23 @@ export default function PanelS() {
 
                   <div className='name-list'>
                     {
-                      solicitudes.map( (e) => (
-                        <p>{">"} {e.name}</p>
+                      solicitudes.map( (e, index) => (
+                        <p key={index}>{">"} {e.name}</p>
                       ))
                     }
                   </div>
                   
                   <div>
                   {
-                      solicitudes.map( (e) => (
-                        <p>{e.materia}</p>
+                      solicitudes.map( (e, index) => (
+                        <p key={index}>{e.materia}</p>
                       ))
                     }
                   </div>
                   <div className='status'>
                   {
-                      solicitudes.map( (e) => (
-                        <p className={e.style}>{e.status}</p>
+                      solicitudes.map( (e,index) => (
+                        <p className={e.style} key={index}>{e.status}</p>
                       ))
                     }
                   </div>

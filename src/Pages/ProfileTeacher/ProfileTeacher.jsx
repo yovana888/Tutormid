@@ -86,7 +86,7 @@ export default function ProfileTeacher() {
                 </Estudios>
 
                 <ComentsSection className="">
-                  <Coments idDocente={idDocente}/>
+                  <Coments idDocente={idDocente} nameTeacher={dataProfile.length > 0 ? dataProfile[0].users_rol.full_name:'name'}/>
                 </ComentsSection>
               </div>
             </div>

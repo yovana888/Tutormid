@@ -1,22 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { BodyComents } from "./Styles";
 import { AiFillStar } from "react-icons/ai";
 import Button from "../../../../Components/Elements/Button/Button";
 import { getCommentsByTeacher } from "../../../../supabase/services/ads";
 import Loader from "../../../../Components/Elements/Loader/Loader";
 import { toast } from "react-toastify";
-export default function Coments({ idDocente }) {
+import { AuthContext } from "../../../../context/auth.context";
+import AddComent from "./Modals/AddCommet";
+
+export default function Coments({ idDocente, nameTeacher }) {
   const [isLoad, setIsLoad] = useState(false);
   const [comentaries, setComentaries] = useState([]);
+  const [showButton, setShowButton] = useState(false);
   // ------------------------------Acciones para Abrir Modal Add Commet------------------------------
 
-  const [showModalComentary, setshowModalComentary] = useState(false);
-  const toggleModalComentary = () => {
-    setshowModalComentary(!showModalComentary);
+  const [showModalComment, setShowModalComment] = useState(false);
+  const { isLoginFunction, user } = useContext(AuthContext);
+  const toggleModalComment = () => {
+    setShowModalComment(!showModalComment);
   };
 
   useEffect(() => {
     fetchData();
+    fetch();
   }, []);
 
   const fetchData = async () => {
@@ -35,6 +41,15 @@ export default function Coments({ idDocente }) {
     }
   };
 
+  const fetch = async () => {
+    const res = await isLoginFunction();
+    setShowButton(!res ? false : true);
+  };
+
+  const publicComentary = () => {
+    toggleModalComment();
+  };
+
   return (
     <BodyComents>
       <h4>Comentarios</h4>
@@ -47,25 +62,35 @@ export default function Coments({ idDocente }) {
         </>
       )}
       {comentaries.length > 0 &&
-        comentaries.map((item) => (
-          <ComentContent
-            img={item.users_rol.photo_url}
-            name={item.users_rol.full_name}
-            stars={item.score}
-            date={
-              item.created_at.slice(0, 9) + item.created_at.slice(11, 16)
-            }
-            text={item.message}
-          />
+        comentaries.map((item, index) => (
+          <div key={index}>
+            <ComentContent
+              img={item.users_rol.photo_url}
+              name={item.users_rol.full_name}
+              stars={item.score}
+              date={item.created_at.slice(0, 9) + item.created_at.slice(11, 16)}
+              text={item.message}
+            />
+          </div>
         ))}
 
       <div className="d-flex justify-content-center">
-        <Button
-          className="mt-3 "
-          text="Publicar un comentario"
-          color="outline"
-        />
+        {showButton && (
+          <Button
+            className="mt-3 "
+            text="Publicar un comentario"
+            color="outline"
+            onClick={() => publicComentary()}
+          />
+        )}
       </div>
+      <AddComent
+        toggle={toggleModalComment}
+        isOpen={showModalComment}
+        idTeacher={idDocente}
+        nameTeacher={nameTeacher}
+        idStudent={user?.id}
+      />
     </BodyComents>
   );
 }
@@ -74,7 +99,11 @@ function ComentContent(props) {
   return (
     <div className="section">
       <div className="image">
-        <img src={props.img} alt="" style={{borderRadius:'50%', width:'80px', height:'80px'}}/>
+        <img
+          src={props.img}
+          alt=""
+          style={{ borderRadius: "50%", width: "50px", height: "50px" }}
+        />
       </div>
 
       <div className="content ">

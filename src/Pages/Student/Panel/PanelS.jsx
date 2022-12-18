@@ -62,6 +62,7 @@ export default function PanelS() {
             img='/Ellipse 27.svg'
             name='Amelia Perez Rojas'
             email='amelia@gmail.com'
+            number='975635061'
             isStudent={true}/>
             <Favoritos/>
           </div>

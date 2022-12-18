@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card } from './Styles'
+import { Card, Phone, Calendar  } from './Styles'
 import { FiEdit } from 'react-icons/fi';
 
 export default function ProfileCard(props) {
@@ -15,15 +15,18 @@ export default function ProfileCard(props) {
                   {(props.isStudent) ? 
                     <>
                     <p className='email'>{props.email}</p>
-                    <p className='number'>975635061</p>
+                    <p className='number'>{props.number}</p>
                     </>
                     :
                     <>
-                    <div className='d-flex justify-content-around align-items-center'>
-                      <p className='email'>{props.email}</p>
-                      <p className='date'>{props.date}</p>
+                    <p className='email'>{props.email}</p>
+                    <div className='d-flex justify-content-around align-items-center'>             
+                      <p className='number'><Phone/> {props.number}</p>
+                      <p className='date'><Calendar/>  {props.date}</p>
                     </div>
-                    <p className='number'>975635061</p>
+                    <p className='description'>{props.description}<br/><span>Ver Más</span>
+                    </p>
+                    
                         </>
                       }
             </div>

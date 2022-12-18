@@ -11,7 +11,7 @@ import {
 } from "../../../supabase/services/ads";
 import { toast } from "react-toastify";
 
-export default function Filter() {
+export default function Filter({setFilters, filters}) {
   const [listCourses, setListCourses] = useState([]);
   const [listNiveles, setNiveles] = useState([]);
   const [listTypeStudents, setlistTypeStudents] = useState([]);
@@ -43,29 +43,23 @@ export default function Filter() {
   const [selectedMaterias, setSelectedMaterias] = useState(null);
   function handleMaterias(option) {
     setSelectedMaterias(option);
+    changeFilter('idcurso', option===null?null:option.value);
   }
 
   const [selectedType, setSelectedType] = useState(null);
   function handleType(option) {
     setSelectedType(option);
+    changeFilter('idtipo', option===null?null:option.value)
   }
 
   const [selectedLevel, setSelectedLevel] = useState(null);
   function handleLevel(option) {
     setSelectedLevel(option);
+    console.log(option,'ayer')
+    changeFilter('idnivel', option===null?null:option.value);
   }
 
-  const disponibilityList = [
-    { value: "red", label: "Red" },
-    { value: "green", label: "Green" },
-    { value: "yellow", label: "Yellow" },
-    { value: "blue", label: "Blue" },
-    { value: "white", label: "White" },
-    { value: "orange", label: "Orange" },
-    { value: "purple", label: "Purple" },
-    { value: "prueba", label: "Prueba" },
-    { value: "purple2", label: "purple2" },
-  ];
+  const disponibilityList = [];
 
   const [selectedDisponibility, setSelectedDisponibility] = useState(null);
   function handleDisponibility(option) {
@@ -76,7 +70,10 @@ export default function Filter() {
     handleMaterias(null);
     handleLevel(null);
     handleType(null);
-    handleDisponibility(null);
+  }
+
+  const changeFilter = (name, value) =>{
+    setFilters({...filters, [name]:value})
   }
 
   return (

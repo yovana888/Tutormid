@@ -3,7 +3,6 @@ import { NewSelect } from "../../../Components/Elements/NewSelect/NewSelect";
 import { FilterStyled } from "./Styles";
 import Button from "../../../Components/Elements/Button/Button";
 import { FiFilter } from "react-icons/fi";
-import Loader from '../../../Components/Elements/Loader/Loader';
 
 import {
   getCourses,
@@ -17,15 +16,12 @@ export default function Filter() {
   const [listNiveles, setNiveles] = useState([]);
   const [listTypeStudents, setlistTypeStudents] = useState([]);
 
-  const [isLoad, setIsLoad] = useState(false);
-
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
     try {
-      setIsLoad(true);
       const resCourses = await getCourses();
       if (resCourses.status == 500) throw resCourses.message;
       setListCourses(resCourses);
@@ -41,9 +37,7 @@ export default function Filter() {
       toast.error(error.toString(), {
         position: toast.POSITION.TOP_RIGHT,
       });
-    } finally{
-      setIsLoad(false);
-    }
+    } 
   };
 
   const [selectedMaterias, setSelectedMaterias] = useState(null);

@@ -27,5 +27,6 @@ export const colors = {
     bgPurple2:"#A387EF",
     cancelColor: "#EF6565",
     bgChatInput: '#E8EBFA',
+    dateColor: '#E39AFF'
 }
 

@@ -6,7 +6,7 @@ import { AuthContext } from '../../context/auth.context';
 export default function Dashboard() {
   const { isLoginFunction } = useContext(AuthContext);
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     fetch()
   }, [])
@@ -17,8 +17,7 @@ export default function Dashboard() {
       navigate('/');
      }
   };
-  
-  
+
   return (
     <>
         <NavbarDashboard/>

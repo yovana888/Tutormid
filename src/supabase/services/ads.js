@@ -45,7 +45,7 @@ export const getNiveles = async () => {
 
 export const getAds = async () => {
     try {
-        const { error, data } = await supabase.from("ads").select("*, users_rol(photo_url,about_me, full_name, score, comments), course(name)");
+        const { error, data } = await supabase.from("ads").select("*, users_rol(photo_url,about_me, full_name, score, comments, id), course(name)");
         if (error) throw error;
         return data;
     } catch (error) {

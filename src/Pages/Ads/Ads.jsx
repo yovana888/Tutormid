@@ -19,7 +19,6 @@ export default function Ads() {
       setIsLoad(true);
       const res = await getAds();
       if (res.status == 500) throw res.message;
-      console.log(res);
       setListAds(res);
     } catch (error) {
       toast.error(error.toString(), {
@@ -30,6 +29,10 @@ export default function Ads() {
     }
   };
 
+  const goDocenteProfile=(idDocente)=>{
+
+  }
+
   return (
     <BodyAds>
       <Filter />
@@ -38,7 +41,7 @@ export default function Ads() {
         {isLoad && <><Loader /><br /><br /></>}
 
         {listAds.length > 0 &&
-          listAds.map((item, index) => <AdsCards key={index} item={item} />)}
+          listAds.map((item, index) => <AdsCards key={index} item={item} onClick={goDocenteProfile(item.users_rol.id)} />)}
         {listAds.length > 0 && (
           <div className="btn-ads">
             <Button

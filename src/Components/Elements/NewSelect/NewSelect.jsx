@@ -3,8 +3,6 @@ import { colors } from "../../../Styles/colors";
 import Select  from 'react-select' 
 
 
-import classNames from "classnames";
-
 const colourStyles = {
   control: (styles, state) => ({
     ...styles,
@@ -41,7 +39,6 @@ const colourStyles = {
 
 
 export const NewSelect = ({
-  className,
   isMulti = false,
   isSearchable = false,
   options,
@@ -57,7 +54,6 @@ export const NewSelect = ({
   return (
     <Select
       components={ isInputSearch?{ DropdownIndicator:() => null , IndicatorSeparator:() => null }:{} }
-      className={classNames("Select option", className)}
       isMulti={isMulti}
       options={options}
       value={value}

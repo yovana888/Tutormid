@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import AdsTeachers from '../Home/Sections/AdsTeachers/AdsTeachers'
 import Banner from './Sections/Banner/Banner'
 import Beneficios from './Sections/Beneficios/Beneficios'

@@ -36,8 +36,8 @@
     "@types/react-dom": "^18.0.8",
     "@types/styled-components": "^5.1.26",
     "@vitejs/plugin-react": "^2.2.0",
-    "fork-ts-checker-webpack-plugin": "5.1.0",
     "esbuild": "^0.15.15",
+    "fork-ts-checker-webpack-plugin": "5.1.0",
     "vite": "^3.2.3"
   },
   "overrides": {

@@ -100,6 +100,10 @@ export const BtnEdit = styled(Button)`
         border: 1px solid ${colors.primaryColor};
         color: ${colors.primaryColor};
      }
+
+     &:active {
+        background-color: ${colors.bgPurple2} !important;
+     }
 `;
 
 export const BtnView = styled(Button)`
@@ -109,6 +113,11 @@ export const BtnView = styled(Button)`
 
      &:hover{
         background-color: ${colors.primaryColor};
-        color: ${colors.bgWhite};
+        color: ${colors.bgWhite} !important;
+     }
+
+     &:active {
+        background-color: ${colors.bgPurple2} !important;
+        border: 1px solid ${colors.primaryColor} !important;
      }
 `;

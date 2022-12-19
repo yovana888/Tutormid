@@ -77,8 +77,13 @@ h4{
 
 .list-info {
     display: flex;
-    justify-content: space-between;
     margin: 0 2rem 1.5rem 0;
+    list-style: none;
+    padding: 0;
+
+    @media screen and (max-width: 575px) {
+        flex-direction: column;
+    }
     
     .hour {
         color: ${colors.materiaColor};
@@ -95,6 +100,28 @@ h4{
         .materia-list {
             color: ${colors.textColor};
             font-weight: 300;
+
+            display: flex;
+            justify-content: space-between;
+            width: 35%;
+
+            @media (min-width: 576px) and (max-width: 992px) {
+                width: 40%;
+            }
+
+            @media (min-width: 381px) and (max-width: 575px) {
+                width: 80%;
+                svg { 
+                    margin-top: -25px;
+                }
+            }
+
+            @media (max-width: 380px) {
+                width: 100%;
+                svg { 
+                    margin-top: -25px;
+                }
+            }
         }
 }
 
@@ -127,6 +154,11 @@ h4{
 .full-box{
     color: ${colors.textColor};
     padding: 2rem;
+    overflow-x: scroll;
+
+    .list {
+        min-width: 700px;
+    }
 }
 
 .title-studies {

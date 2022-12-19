@@ -86,24 +86,23 @@ export default function PanelT() {
           <div className='col-12 col-md-7 '>               
             <Welcome>
                <h4>👋  Bienvenid@ Raul</h4>
+               {/* <span>Estas son tus clases programadas para el día de hoy</span> */}
                <div className='list-class'>
                   <div className='list-details'>
-                    <div className='list-info'>
-                      <p>
-                        <span className='hour'>9:30 - 10:30</span>
-                        <span className='list-name'>Julio Perez Chavez</span>
-                        <span className='materia-list'>Matematica General</span>
-                     </p>
-                     <span><Chat/></span>
-                    </div>
-                    <div className='list-info'>
-                      <p>
-                        <span className='hour'>9:30 - 10:30</span>
-                        <span className='list-name'>Julio Perez Chavez</span>
-                        <span className='materia-list'>Matematica General</span>
-                      </p>
-                      <span><Chat/></span>
-                    </div>
+                    <ul className='list-info'>
+                      <li className='hour'>9:30 - 10:30</li>
+                      <li className='list-name'>Julio Perez Chavez</li>
+                      <li className='materia-list'>Matematica General
+                      <Chat/>
+                      </li>
+                    </ul>
+                    <ul className='list-info'>
+                      <li className='hour'>9:30 - 10:30</li>
+                      <li className='list-name'>Julio Perez Chavez</li>
+                      <li className='materia-list'>Matematica General
+                      <Chat/>
+                      </li>
+                    </ul>
                   </div>
                 </div>
             </Welcome> 
@@ -121,38 +120,34 @@ export default function PanelT() {
               :
               <>
                 <div className='full-box'>
-                <div className='list'>
+                  <div className='list'>
 
-                  {solicitudes.map( (e, index) => 
-                  (<>
-                    <div className='d-flex justify-content-between align-items-center' key={index}>
-                      <span className='fecha'>{e.fecha}</span> <Divider secondaryColor="grey" 
-                      ></Divider>
-                    </div>
-                    {
-                      e.teachers.map( (tch, index) => (
-                      <ul className='list-unstyled d-flex justify-content-between' key={index}>
-                        <li>{ tch.name }</li> 
-                        <li>{ tch.materia }</li> 
-                        <li>
-                          <span className={ tch.style }>
-                            { tch.status }
-                          </span>
-                        </li> 
-                        <li><Calendar/></li>
-                      </ul>
-                      ))
-                    }
+                    {solicitudes.map( (e, index) => 
+                    (<>
+                      <div className='d-flex justify-content-between align-items-center' key={index}>
+                        <span className='fecha'>{e.fecha}</span> <Divider secondaryColor="grey" 
+                        ></Divider>
+                      </div>
+                      {
+                        e.teachers.map( (tch, index) => (
+                        <ul className='list-unstyled d-flex justify-content-between' key={index}>
+                          <li>{ tch.name }</li> 
+                          <li>{ tch.materia }</li> 
+                          <li>
+                            <span className={ tch.style }>
+                              { tch.status }
+                            </span>
+                          </li> 
+                          <li><Calendar/></li>
+                        </ul>
+                        ))
+                      }
+                      
+                    </>
+                    )
+                      )}
                     
-                  </>
-                  )
-                    )}
-                  
-                </div>
-
-                
-
-                
+                  </div>
               </div>
               </>
               }

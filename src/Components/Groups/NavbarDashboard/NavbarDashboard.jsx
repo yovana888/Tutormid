@@ -15,7 +15,7 @@ export default function NavbarStd() {
   return (
     <Navbar className='nav-bar'>
       <div className='space'>
-        <NavLogo to="/"><img src="/LogoTutormid.svg" alt="" style={{marginTop:'-23px', width:'130px'}}/></NavLogo>
+        <NavLogo to="/"><img src="/LogoTutormid.svg" alt="" style={{ width:'130px'}}/></NavLogo>
         <div className={`nav-items ${isOpen && "open"}`}>
             {
               menu.map(item=>(

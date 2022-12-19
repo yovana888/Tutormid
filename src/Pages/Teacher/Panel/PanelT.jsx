@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import {PanelBody, Estudios, Check, Welcome, Chat,Solicitudes, Calendar} from './Style'
 import ProfileCard from '../../../Components/Cards/ProfileCard/ProfileCard';
 
-
 export default function PanelT() {
   const [showModalComentary, setshowModalComentary] = useState(false);
   const toggleModalComentary = () => {

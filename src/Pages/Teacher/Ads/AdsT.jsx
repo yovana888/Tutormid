@@ -14,7 +14,7 @@ export default function AdsT() {
         <div className='row '>
             <div className='right-side col-md-3 col-12 mb-4'>
                                           {/* ADS */}
-              <Card className='my-ads'>
+              <Card className=''>
                 <h4>Mis Anuncios</h4>
                 <p className='active'><span className='me-2'><BiBookContent/></span>Matematica Financiera</p>
                 <p><span className='me-2'><BiBookContent/></span>Matematica General</p>

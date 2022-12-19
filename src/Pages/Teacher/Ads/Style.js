@@ -83,11 +83,11 @@ export const Edit = styled(AiOutlineEdit)`
 
 export const Eye = styled(FiEyeOff)`
     font-size: 30px;
-    color: ${colors.primaryColor};
-
+    
     &:hover{
-        color: #fff;
+        color: ${colors.primaryColor};
      }
+
 `;
 
 export const BtnEdit = styled(Button)`
@@ -102,22 +102,24 @@ export const BtnEdit = styled(Button)`
      }
 
      &:active {
-        background-color: ${colors.bgPurple2} !important;
+        background-color: ${colors.primaryColor} !important;
+        border: 1px solid ${colors.bgWhite} !important;
      }
 `;
 
 export const BtnView = styled(Button)`
-     background-color: #fff;
+     background-color: ${colors.primaryColor};
      border: 1px solid ${colors.primaryColor};
      margin-right: 2rem;
 
      &:hover{
-        background-color: ${colors.primaryColor};
-        color: ${colors.bgWhite} !important;
+        background-color: #fff;
+        border: 1px solid ${colors.primaryColor};
+        color: ${colors.primaryColor};
      }
 
      &:active {
-        background-color: ${colors.bgPurple2} !important;
-        border: 1px solid ${colors.primaryColor} !important;
+        background-color: ${colors.primaryColor} !important;
+        border: 1px solid ${colors.bgWhite} !important;
      }
 `;

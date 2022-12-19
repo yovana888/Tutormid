@@ -1,12 +1,13 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import ProfileCard from '../../../Components/Cards/ProfileCard/ProfileCard'
 import {PanelBody, Welcome, Solicitudes} from './Styles'
 import Favoritos from '../Panel/Favoritos/Favoritos'
 import Button from '../../../Components/Elements/Button/Button'
 import { Link } from 'react-router-dom';
+import { AuthContext } from "../../../context/auth.context";
 
 export default function PanelS() {
-
+  const { user } = useContext(AuthContext);
 
   let solicitudes = [
     {
@@ -59,12 +60,14 @@ export default function PanelS() {
         <div className='row '>
           <div className='col-md-5'>
             <ProfileCard
-            img='/Ellipse 27.svg'
-            name='Amelia Perez Rojas'
-            email='amelia@gmail.com'
-            number='975635061'
-            isStudent={true}/>
-            <Favoritos/>
+               img={user.photo_url}
+               name={user.full_name}
+               email={user.email}
+               number={user.phone}
+               date={user.datebirthay}
+               description={user.about_me}
+               isStudent={true}/>
+            <Favoritos idUser={user.id}/>
           </div>
  {/* BIENVENID@ CARD--------------------------------------------- */}
           <div className='col-md-7'>
@@ -72,7 +75,7 @@ export default function PanelS() {
                 <div className='container'>
                   <div className='row'>
                     <div className='col-md-7 left-side'>
-                      <h4>👋  Bienvenid@ Amelia</h4>
+                      <h4>👋  Bienvenid@ {user.full_name.split(' ')[0]}</h4>
                       <p>Recuerda que puedes buscar a tu profesor ideal con los filtros que selecciones.</p>
                       <Link to={"/ads"}><Button  text="Ver Profesores" color="outline" /></Link>
                     </div>

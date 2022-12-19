@@ -1,32 +1,11 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import { Container, ColumnText, Title, SubTitle, ContainerImage } from './Styles'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import NewInputGroup from '../../../../Components/Groups/InputGroup/InputGroup';
 import Text from '../../../../Components/Elements/Text/Text';
-import {
-  getCourses,
-} from "../../../../supabase/services/ads";
 
 export default function Banner() {
-  const [listCourses, setListCourses] = useState([]);
-
-  
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    try {
-      const resCourses = await getCourses();
-      if (resCourses.status == 500) throw resCourses.message;
-      setListCourses(resCourses);
-    } catch (error) {
-      toast.error(error.toString(), {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-    } 
-  };
   return (
     <>
         <Container>

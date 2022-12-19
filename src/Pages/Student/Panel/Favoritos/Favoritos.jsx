@@ -1,13 +1,13 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { useState } from 'react';
 import {FavBody, StarIcon, BookContent} from './Styles'
 
 
-export default function Favoritos() {
+export default function Favoritos({idUser}) {
 
   const [full, setFull] = useState(false);
   function handleFull(isLleno) { setFull(isLleno) }
-
+  
   if (!full) {
     return (
 

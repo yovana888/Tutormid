@@ -99,3 +99,7 @@ export const getCommentsByTeacher = async(idTeacher) =>{
   }
 }
 
+const filtersAds = (filters) => {
+
+}
+

@@ -5,6 +5,7 @@ const url_photo_default =
 //Linea 9: verificamos que no este registrado en la tabla de usuarios_rol
 export const setProfileByEmailService = async (data, rol, fullname) => {
   try {
+    console.log(data, 'veamos')
     const existUser = await getUserData(data.id);
     if (existUser.length > 0) {
       return true;
@@ -18,11 +19,12 @@ export const setProfileByEmailService = async (data, rol, fullname) => {
         email: data.email,
         about_me: "",
         studies: [],
-        score: 0,
-        comments:0
+        comments:0,
+        score: 0
       });
     }
   } catch (error) {
+    console.log(error)
     return error;
   }
 };
@@ -47,9 +49,10 @@ export const setProfileByGoogleService = async (rol) => {
           email: metadata.email,
           about_me: "",
           studies: [],
-          score: 0,
-          comments:0
+          comments:0,
+          score: 0
         });
+        console.log(response.error)
         if (response.error) throw response.error;
         return true;
       }

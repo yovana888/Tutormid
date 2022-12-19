@@ -16,6 +16,8 @@ export const registerService = async (data) => {
       data.fullname
     );
 
+    console.log(responseRegister.error)
+
     if (responseRegister.error) throw responseRegister.error;
 
     return true;

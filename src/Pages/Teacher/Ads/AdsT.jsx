@@ -2,7 +2,7 @@ import React from 'react'
 import Button from '../../../Components/Elements/Button/Button';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 import { BiBookContent } from 'react-icons/bi';
-import { AdsTeacher, Card, Edit, Eye } from './Style';
+import { AdsTeacher, Card, Edit, Eye,BtnEdit, BtnView } from './Style';
 
 
 
@@ -12,9 +12,9 @@ export default function AdsT() {
     <AdsTeacher>
       <div className='container'>
         <div className='row '>
-            <div className='right-side col-md-3 col-12'>
+            <div className='right-side col-md-3 col-12 mb-4'>
                                           {/* ADS */}
-              <Card className='my-ads'>
+              <Card className=''>
                 <h4>Mis Anuncios</h4>
                 <p className='active'><span className='me-2'><BiBookContent/></span>Matematica Financiera</p>
                 <p><span className='me-2'><BiBookContent/></span>Matematica General</p>
@@ -25,9 +25,9 @@ export default function AdsT() {
 
             <div className='left-side col-md-9 col-12'>
                                           {/* ITEMS */}
-              <div className='row mt-4'>
+              <div className='row'>
 
-                <div className='col-md-4 col-12 '>
+                <div className='col-12 col-lg-4'>
                   <Card className='d-flex items'>
                     <img src="/image 70.svg" alt="" />
                       <div className='text-item'>
@@ -37,7 +37,7 @@ export default function AdsT() {
                   </Card>
                 </div>
 
-                <div className='col-md-4 col-12'>
+                <div className='col-12 col-lg-4'>
                   <Card className='d-flex items'>
                     <img src="/image 71.svg" alt="" />
                     <div className='text-item'>
@@ -47,7 +47,7 @@ export default function AdsT() {
                   </Card>
                 </div>
 
-                <div className='col-md-4 col-12'>
+                <div className='col-12 col-lg-4'>
                   <Card className='d-flex items'>
                     <img src="/image 69.svg" alt="" />
                     <div className='text-item'>
@@ -70,8 +70,10 @@ export default function AdsT() {
               </Card>
 
               <div className='btns d-flex '>
-                <Button className={"me-3"} icon={<Edit/>} size = "mini-size" />
-                <Button icon={<Eye/>} color="outline" size = "mini-size" />
+                <BtnEdit><Edit/></BtnEdit>
+                <BtnView><Eye/></BtnView>
+
+    
               </div>
             </div>
         </div>

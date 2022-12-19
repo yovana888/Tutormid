@@ -5,17 +5,18 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { IoMdExit } from 'react-icons/io';
 import { AuthContext } from '../../../context/auth.context';
 import { MenuTeacher, MenuStudent } from './MenuRol'
-
+import { useNavigate } from 'react-router-dom';
 export default function NavbarStd() {
 
   const [isOpen, setIsOpen] = useState(false);
-  const { user } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
   const [menu, setMenu] = useState(user.rol=="estudiante" ? MenuStudent : MenuTeacher)
+  const navigate = useNavigate();
 
   return (
     <Navbar className='nav-bar'>
       <div className='space'>
-        <NavLogo to="/"><img src="/LogoTutormid.svg" alt="" style={{marginTop:'-23px', width:'130px'}}/></NavLogo>
+        <NavLogo to="/"><img src="/LogoTutormid.svg" alt="" style={{ width:'130px'}}/></NavLogo>
         <div className={`nav-items ${isOpen && "open"}`}>
             {
               menu.map(item=>(
@@ -31,7 +32,7 @@ export default function NavbarStd() {
         </div>
       </div>
       <UserItems className='user-items'>  
-        <img src="/Ellipse 27.svg" alt="" />  
+        <img src={user.photo_url} alt="" />  
         
 {/*-----------DROPDOWN SALIR---------------- */}
         <Dropdown>
@@ -40,7 +41,7 @@ export default function NavbarStd() {
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item><IoMdExit/> Salir</Dropdown.Item>
+            <Dropdown.Item onClick={()=>{logout(); navigate('/')}}><IoMdExit/> Salir</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown> 
 

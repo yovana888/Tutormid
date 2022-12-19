@@ -56,7 +56,7 @@ export default function ResetPassword() {
 
   return (
     <Container>
-      <img src="../../../src/assets/Logo.svg" alt="" width={130} />
+      <img src="/Logo.svg" alt="" width={130} />
       <FormContainer onSubmit={formik.handleSubmit}>
         <TextField
           icon={

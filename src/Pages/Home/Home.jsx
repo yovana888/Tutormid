@@ -23,7 +23,7 @@ export default function Home() {
                         <NewInputGroup/>
                     </ColumnText>
                 </Col>
-                <ContainerImage><img src="src/assets/img-banner.svg" alt="img-banner" /></ContainerImage>
+                <ContainerImage><img src="https://eheiqcszbiikeipnnzhf.supabase.co/storage/v1/object/sign/storage/img-banner.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzdG9yYWdlL2ltZy1iYW5uZXIuc3ZnIiwidHJhbnNmb3JtYXRpb25zIjoiIiwiaWF0IjoxNjcxNDkxNzQ1LCJleHAiOjE5ODY4NTE3NDV9.5vRRk1ZOz2lZtQF_AZ71QtpeNs0DYwCOvKYX8WrzhF0" alt="img-banner" /></ContainerImage>
            </Row>
         </Container>
         <Steps/>
